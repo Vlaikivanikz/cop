@@ -17,3 +17,6 @@ def index(request):
     </html>
     '''
     return HttpResponse(html)
+def about(req):
+    print(req)
+    return HttpResponse('About page')
