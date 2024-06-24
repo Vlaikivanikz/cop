@@ -1,9 +1,8 @@
-# example/urls.py
 from django.urls import path
 
-from coopApp.views import index
-
+from coopApp.views import *
+from . import views
 
 urlpatterns = [
-    path('', index),
+    path('', views.homepage),
 ]

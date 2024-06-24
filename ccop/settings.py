@@ -55,7 +55,7 @@ ROOT_URLCONF = 'ccop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['html_files'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
