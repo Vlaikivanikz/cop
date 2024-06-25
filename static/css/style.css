@@ -29,7 +29,7 @@ body{
     gap: 30px;
 }
 
-.main_btns .item_1{
+#item_1{
     width: 25%;
     background: rgba(99,38,12,1);
     background: linear-gradient(298deg, rgba(99,38,12,1) 16%, #232122 72%);
@@ -40,7 +40,7 @@ body{
     position: relative;
 }
 
-.main_btns .item_2{
+#item_2{
     width: 25%;
     background: rgb(255,196,70);
     background: linear-gradient(298deg, rgba(255,196,70,1) 16%, rgba(99,38,12,1) 72%);
@@ -51,7 +51,7 @@ body{
     position: relative;
 }
 
-.main_btns .item_3{
+#item_3{
     width: 25%;
     background: rgba(99,38,12,1);
     background: linear-gradient(298deg, rgba(99,38,12,1) 15%, rgba(255,196,70,1) 88%);
