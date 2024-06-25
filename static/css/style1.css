@@ -119,3 +119,10 @@ body{
 .main_btns .icon i{
     font-size: 30px;
 }
+
+/*  PORTFOLIOS PAGE */
+.port {
+    width: 30%;
+    background-color: black;
+    height: 100px;
+}
