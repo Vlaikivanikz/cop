@@ -20,10 +20,11 @@
         fetch('/getPorts')
             .then(res => res.text())
             .then(ans => {
-                let db = JSON.parse(ans)
-                let port = document.createElement('div')
-                let NAME = document.createElement('div')
-                let OCCUP = document.createElement('div')
+                console.log(JSON.parse(ans))
+                // let db = JSON.parse(ans)
+                // let port = document.createElement('div')
+                // let NAME = document.createElement('div')
+                // let OCCUP = document.createElement('div')
             })
     </script>
 </body>

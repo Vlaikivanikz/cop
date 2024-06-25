@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\css\style1.css">
+    <title>Create portfolio</title>
+</head>
+<body>
+    <form style="width: 50%;" method="post" action="/createPort" id="crea">
+        {% csrf_token %}
+        <label name="name">Enter your name:</label>
+        <input name="name" ><br>
+        <label name="age">Enter your age:</label>
+        <input name="age" type="number"><br>
+        <label name="occupation">Enter your occupation:</label>
+        <input name="occupation" ><br>
+        <label name="salary">Enter the salary you would like:</label>
+        <input name="salary" type="number"><br>
+        <label name="exp">Enter your work expirience:</label>
+        <input name="exp" ><br>
+        <label name="education">Enter your education:</label>
+        <input name="education" ><br>
+        <label name="skills">Enter your additional skills:</label>
+        <input name="skills"><br>
+        <label name="citizenship">Enter your citizenship:</label>
+        <input name="citizenship"><br>
+        <label name="location">Enter area, where you would like to work:</label>
+        <input name="location"><br>
+        <label name="photo">Upload your photo:</label>
+        <input name="photo" type="file"><br>
+        <label name="contacts">Enter your contacts:</label>
+        <input name="contacts"><br>
+        <label name="ifOnlineWork">Online work:</label>
+        <p>I can work online<input name="ifOnlineWork" type="radio" value="true"><br>
+        I can't work online<input name="ifOnlineWork" type="radio" value="false"></p>
+        <label name="about">Enter extra information about you:</label>
+        <input name="about"><br>
+
+        <input type="submit" >
+    </form>
+</body>
+</html>

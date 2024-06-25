@@ -120,9 +120,7 @@ body{
     font-size: 30px;
 }
 
-/*  PORTFOLIOS PAGE */
-.port {
-    width: 30%;
-    background-color: black;
-    height: 100px;
+/*  CREATE PORTFOLIO PAGE */
+#crea input{
+    color: black;
 }
