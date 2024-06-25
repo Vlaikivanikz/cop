@@ -21,16 +21,17 @@ body{
 
 
 .img1 {
-    background-image: url("alondra-lucia--_os35-xQjc-unsplash.jpg");
+    background-image: url("background.png");
     background-size: no-repeat;
+    position: absolute;
     background-position: center;
     background-size: cover;
-    height: 400px;
-    width: 400px;
+    height: 700px;
+    width: 100%;
 }
 
 .bio h2{
-    margin-top: 150px;
+    margin-top: 200px;
     text-align: center;
     font-family: 'Urbanist';
     font-size: 500%;
@@ -47,13 +48,12 @@ body{
     font-family: 'Righteous';
     font-size: 300%;
     margin-left: 2%;
-    margin-top: 2%;
 }
 
 
 .main_btns {
     display: flex;
-    margin-top: 70px;
+    margin-top: 350px;
     gap: 8%;
 }
 
