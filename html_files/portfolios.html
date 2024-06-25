@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\css\style1.css">
     <title>Portfolios</title>
 </head>
 <body>
     <h1>Portfolios</h1>
+    <div class="port" >
+        <div class="name" >
+
+        </div>
+        <div class="occup" >
+
+        </div>
+    </div>
     <script>
         fetch('/getPorts')
             .then(res => res.text())
-            .then(console.log)
+            .then(ans => {
+                let db = JSON.parse(ans)
+                let port = document.createElement('div')
+                let NAME = document.createElement('div')
+                let OCCUP = document.createElement('div')
+            })
     </script>
 </body>
 </html>

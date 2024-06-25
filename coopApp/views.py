@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Portfolio
+from django.http import HttpResponse
 import asyncio
 import json
 # port = Portfolio.objects.create(name='HUi', occupation='Killer')
@@ -18,7 +19,7 @@ def getPorts(req):
         obj['name'] = p.name
         obj['occupation'] = p.occupation
         data.append(obj)
-    return render(req, json.dumps(data), content_type='text/plain')
+    return HttpResponse(str(json.dumps(data)), content_type='text')
     
 def homepage(request):
     return render(request, 'indexx.html')
