@@ -12,5 +12,5 @@ class Portfolio(models.Model):
     photo = models.ImageField(default='DEFAULT VALUE')
     contacts = models.CharField(max_length=40,default='DEFAULT VALUE')
     age = models.IntegerField(default=1)
-    ifOnlineWork = models.BooleanField(default=True)
+    ifOnlineWork = models.CharField(max_length=40,default='DEFAULT VALUE')
     about = models.CharField(max_length=40, default='DEFAULT VALUE')

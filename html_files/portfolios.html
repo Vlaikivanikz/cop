@@ -8,24 +8,95 @@
 </head>
 <body>
     <h1>Portfolios</h1>
-    <div class="port" >
-        <div class="name" >
+    <div id="deleteAll" ><p>Очистить нахуй</p></div>
+    <script>
+        
+        
+    </script>
+    <div id="ports">
+    <!-- <div class="port" >
+        <div class="main-info" >
+            <div class="occupation" >
+                <p>Killer</p>
+            </div>
+            <div class="salary">
+                <p>100 000</p>
+            </div>
+            <div class="act">
+                <div class="button active" ><p>Active</p></div>
+                <div class="button edit" ><p>Edit</p></div>
+            </div>
+        </div>
+        <div class="other-info">
 
         </div>
-        <div class="occup" >
-
-        </div>
+    </div> -->
     </div>
     <script>
+        console.log()
+        if (window.location.href.split('/')[3] == 'createPort') {
+            console.log('here')
+            window.location.href = '/portfolios'
+        }else {
+            deleteAll.onclick = () => {
+            fetch('/delete')
+                .then(res => {
+                    window.location.href = '/portfolios'
+                })
+        }
         fetch('/getPorts')
             .then(res => res.text())
             .then(ans => {
-                console.log(JSON.parse(ans))
-                // let db = JSON.parse(ans)
-                // let port = document.createElement('div')
-                // let NAME = document.createElement('div')
-                // let OCCUP = document.createElement('div')
+                ports = JSON.parse(ans)
+                console.log(ports)
+                for(let p of ports) {
+                    let port = document.createElement('div')
+                    port.className = 'port'
+                    port.insertAdjacentHTML('beforeend',`
+                    <div class="main-info" >
+                        <div class="occupation" >
+                            <p>${p.occupation}</p>
+                        </div>
+                        <div class="salary">
+                            <p>${p.salary}</p>
+                        </div>
+                        <div class="act">
+                            <div class="button active" ><p>Active</p></div>
+                            <div class="button edit" ><p>Edit</p></div>
+                        </div>
+                    </div>
+                    <div class="other-info">
+
+                    </div>`
+                    )
+                    document.getElementById('ports').append(port)
+                    document.getElementsByClassName('edit')[(document.getElementsByClassName('edit').length - 1)].onclick = () => {
+                        window.location.href = `/${p.id}_&&port`
+                    }
+                    
+                }
+                let acts = document.getElementsByClassName('active')
+                let edits = document.getElementsByClassName('edit')
+                for(let el of acts) {
+                    if (el.firstElementChild.innerHTML == 'Active') {
+                        el.firstElementChild.style.color = 'green'
+                    }else {
+                        el.firstElementChild.style.color = 'red'
+                    }
+                    el.onclick = () => {
+                        if (el.firstElementChild.innerHTML == 'Active') {
+                            el.firstElementChild.innerHTML = 'Inactive'
+                            el.firstElementChild.style.color = 'red'
+                        }else {
+                            el.firstElementChild.innerHTML = 'Active'
+                            el.firstElementChild.style.color = 'green'
+                        }
+                    }
+                }
+
             })
+        }
+        
     </script>
 </body>
 </html>
