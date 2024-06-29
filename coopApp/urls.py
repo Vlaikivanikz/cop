@@ -12,5 +12,5 @@ urlpatterns = [
     re_path(r'_&&port\Z', views.creation),
     re_path(r'^getOnePort__', views.getPortById),
     re_path(r'^editPort__', views.editPort),
-    path('delete', views.deleteAll)
+    path('delete', views.deleteAll),
 ]
