@@ -14,7 +14,9 @@
     /* background-color: #06141b; */
 }
 
-
+/* h1 {
+    color: white;
+} */
 body{
     background-color: #060A0D;
 }
@@ -59,8 +61,8 @@ body{
 
 .main_btns #item_1{
     width: 26%;
-    background: #33241C;
-    background: linear-gradient(298deg, #33241C 16%, #110C09 72%);
+    background: #0F171B;
+    background: linear-gradient(298deg, #0F171B 16%, #122D39 72%);
     border-radius: 10px;
     padding: 32px;
     margin-left: 3%;
@@ -71,8 +73,8 @@ body{
 
 .main_btns #item_2{
     width: 26%;
-    background: #110C09;
-    background: linear-gradient(298deg, #110C09 16%, #33241C 72%);
+    background: #122D39;
+    background: linear-gradient(298deg, #122D39 16%, #0F171B 72%);
     border-radius: 10px;
     padding: 32px;
     cursor: pointer;
@@ -82,8 +84,8 @@ body{
 
 .main_btns #item_3{
     width: 26%;
-    background: #33241C;
-    background: linear-gradient(298deg, #33241C 15%, #110C09 88%);
+    background: #0F171B;
+    background: linear-gradient(298deg, #0F171B 15%, #122D39 88%);
     border-radius: 10px;
     padding: 32px;
     margin-right: 3%;
@@ -94,9 +96,7 @@ body{
 
 
 #info_block{
-    background: linear-gradient(#ffffff, #000000);
     width: 94%;
-    border-bottom: 4px solid transparent;
     border-radius: 10px;
     text-align: center;
     margin-left: 3%;
@@ -110,7 +110,6 @@ body{
     width: 45px;
     height: 45px;
     border-radius: 10px;
-    background-color: black;
     align-items: center;
     justify-content: center;
 }
@@ -120,9 +119,103 @@ body{
     font-size: 30px;
 }
 
-/*  PORTFOLIOS PAGE */
+/*  CREATE PORTFOLIO PAGE */
+#crea input{
+    color: black;
+}
+/* PORTFOLIOS PAGE */
 .port {
-    width: 30%;
-    background-color: black;
-    height: 100px;
+    padding: 1%;
+    margin-left: 2%;
+    background-color: white;
+    border-radius: 10px;
+    width: 20%;
+    height: 15vh;
+    display: flex;
+    color: black;
+    margin-bottom: 5%;
+}
+
+
+.main-info {
+    font-size: xx-large;
+    width: 80%;
+    height: 100%;
+    color: black;
+    /* background-color: brown; */
+}
+.main-info div div p {
+    margin: 0px;
+    /* color: aqua; */
+}
+
+.other-info {
+    width: 20%;
+    height: 100%;
+    background-color: cornflowerblue;
+}
+.occupation {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    align-items: start;
+    text-align: left;
+}
+.occupation p {
+    color: black;
+}
+.salary {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.salary p {
+    color: black;
+}
+.act {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    /* display: flex;
+    align-items: flex-end;
+    text-align: left; */
+    /* height: 33.3%; */
+}
+.button {
+    margin-right: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 40%;
+    height: 100%;
+    background-color: rgb(223, 223, 223);
+}
+
+.edit p{
+    color: blue;
+}
+
+.button:hover {
+    background-color: rgb(190, 190, 190);
+}
+#deleteAll {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    padding: 1%;
+    margin-left: 2%;
+    background-color: rgb(167, 21, 21);
+    border-radius: 10px;
+    width: 20%;
+    height: 5vh;
+    display: flex;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2%;
+}
+#deleteAll:hover {
+    background-color: red;
 }
