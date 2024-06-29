@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\css\style1.css">
+    <title>Create portfolio</title>
+</head>
+<body>
+    <form style="width: 50%;" method="post" action="/createPort" id="crea">
+        {% csrf_token %}
+        <label name="name">Enter your name:</label>
+        <input name="name" class="fill"><br>
+        <label name="age">Enter your age:</label>
+        <input name="age" type="number" class="fill"><br>
+        <label name="occupation">Enter your occupation:</label>
+        <input name="occupation" class="fill"><br>
+        <label name="salary">Enter the salary you would like:</label>
+        <input name="salary" type="number" class="fill"><br>
+        <label name="exp">Enter your work expirience:</label>
+        <input name="exp" class="fill"><br>
+        <label name="education">Enter your education:</label>
+        <input name="education" class="fill"><br>
+        <label name="skills">Enter your additional skills:</label>
+        <input name="skills"class="fill"><br>
+        <label name="citizenship">Enter your citizenship:</label>
+        <input name="citizenship" class="fill"><br>
+        <label name="location">Enter area, where you would like to work:</label>
+        <input name="location" class="fill"><br>
+        <label name="photo">Upload your photo:</label>
+        <input name="photo" type="file" class="fill"><br>
+        <label name="contacts">Enter your contacts:</label>
+        <input name="contacts" class="fill"><br>
+        <label name="ifOnlineWork">Online work:</label>
+        <p>I can work online<input name="ifOnlineWork" type="radio" value="true" class="fill" checked="checked"><br>
+        I can't work online<input name="ifOnlineWork" type="radio" value="false" class="fill"></p>
+        <label name="about">Enter extra information about you:</label>
+        <input name="about" class="fill"><br>
+
+        <input type="submit" >
+    </form>
+    <script>
+        
+        if ( /_&&port$/.test(window.location.href)) {
+            console.log('here')
+            fetch(`/getOnePort__${window.location.href.split('/')[3].split('_&&port')[0]}`)
+                .then(res => res.text())
+                .then(port => {
+                    port = JSON.parse(port)
+                    let inputs = document.getElementsByClassName('fill')
+                    for(let i of inputs){
+                        if (i.name != 'photo'){
+                            i.value = port[i.name]
+                        }
+                        
+                    }
+                    crea.action = `/editPort__${port.id}`
+
+                })
+            
+        }
+    </script>
+</body>
+</html>
