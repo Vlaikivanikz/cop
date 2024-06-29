@@ -61,8 +61,8 @@ body{
 
 .main_btns #item_1{
     width: 26%;
-    background: #33241C;
-    background: linear-gradient(298deg, #33241C 16%, #110C09 72%);
+    background: #0F171B;
+    background: linear-gradient(298deg, #0F171B 16%, #122D39 72%);
     border-radius: 10px;
     padding: 32px;
     margin-left: 3%;
@@ -73,8 +73,8 @@ body{
 
 .main_btns #item_2{
     width: 26%;
-    background: #110C09;
-    background: linear-gradient(298deg, #110C09 16%, #33241C 72%);
+    background: #122D39;
+    background: linear-gradient(298deg, #122D39 16%, #0F171B 72%);
     border-radius: 10px;
     padding: 32px;
     cursor: pointer;
@@ -84,8 +84,8 @@ body{
 
 .main_btns #item_3{
     width: 26%;
-    background: #33241C;
-    background: linear-gradient(298deg, #33241C 15%, #110C09 88%);
+    background: #0F171B;
+    background: linear-gradient(298deg, #0F171B 15%, #122D39 88%);
     border-radius: 10px;
     padding: 32px;
     margin-right: 3%;
@@ -96,9 +96,7 @@ body{
 
 
 #info_block{
-    background: linear-gradient(#ffffff, #000000);
     width: 94%;
-    border-bottom: 4px solid transparent;
     border-radius: 10px;
     text-align: center;
     margin-left: 3%;
@@ -112,7 +110,6 @@ body{
     width: 45px;
     height: 45px;
     border-radius: 10px;
-    background-color: black;
     align-items: center;
     justify-content: center;
 }
