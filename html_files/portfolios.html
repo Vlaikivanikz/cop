@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\static\css\style1.css">
+    <link rel="stylesheet" href="..\static\css\style2.css">
     <!-- <link rel="stylesheet" href="/style"> -->
     <title>Portfolios</title>
 </head>
@@ -25,9 +25,9 @@
                     <p>100 000</p>
                 </div>
                 <div class="act">
-                    <div class="button active" ><p>Active</p></div>
-                    <div class="button edit" ><img src="..\static\css\edit.png" width="100%"></div>
-                    <div class="button delete"><img src="..\static\css\delete.png" height="100%"></div>
+                    <div class="button active" ><img class="a" src="..\static\css\act_green.png"></div>
+                    <div class="button edit" ><img src="..\static\css\edit.png"></div>
+                    <div class="button delete"><img src="..\static\css\delete.png"></div>
                 </div>
             </div>
             <div class="other-info">
@@ -64,8 +64,9 @@
                                 <p>${p.salary}</p>
                             </div>
                             <div class="act">
-                                <div class="button active" ><p>Active</p></div>
-                                <div class="button edit" ><p>Edit</p></div>
+                                <div class="button active" ><img class="a" src="../static/css/act_green.png"></div>
+                                <div class="button edit" ><img src="../static/css/edit.png"></div>
+                                <div class="button delete"><img src="../static/css/delete.png"></div>
                             </div>
                         </div>
                         <div class="other-info">
@@ -81,18 +82,13 @@
                     let acts = document.getElementsByClassName('active')
                     let edits = document.getElementsByClassName('edit')
                     for(let el of acts) {
-                        if (el.firstElementChild.innerHTML == 'Active') {
-                            el.firstElementChild.style.color = 'green'
-                        }else {
-                            el.firstElementChild.style.color = 'red'
-                        }
                         el.onclick = () => {
-                            if (el.firstElementChild.innerHTML == 'Active') {
-                                el.firstElementChild.innerHTML = 'Inactive'
-                                el.firstElementChild.style.color = 'red'
+                            if (el.firstElementChild.class == 'a') {
+                                el.firstElementChild.class = 'd'
+                                el.firstElementChild.src = '../static/css/act_red.png'
                             }else {
-                                el.firstElementChild.innerHTML = 'Active'
-                                el.firstElementChild.style.color = 'green'
+                                 el.firstElementChild.class = 'a'
+                                el.firstElementChild.src = '../static/css/act_green.png'
                             }
                         }
                     }
