@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\static\css\style2.css">
+    <link rel="stylesheet" href="..\static\css\style5.css">
     <!-- <link rel="stylesheet" href="/style"> -->
     <title>Portfolios</title>
 </head>
@@ -16,27 +16,50 @@
         <div id="mainbody">
             <div id="deleteAll" ><p>Очистить нахуй</p></div>
             <div id="ports">
-            <div class="port" >
-            <div class="main-info" >
-                <div class="occupation" >
-                    <p>Killer</p>
+                <div class="portAndComs" >
+                    <div class="port" >
+                        <div class="main-info" >
+                            <div class="occupation" >
+                                <p>${p.occupation}</p>
+                            </div>
+                            <div class="salary">
+                                <p>${p.salary}</p>
+                            </div>
+                            <div class="act">
+                                <div class="button active" ><svg class='activate' xmlns="http://www.w3.org/2000/svg" width="100%" height="70%" viewBox="0 0 24 24" style="fill: rgb(3, 205, 14);transform: msFilter"><path d="M12 21c4.411 0 8-3.589 8-8 0-3.35-2.072-6.221-5-7.411v2.223A6 6 0 0 1 18 13c0 3.309-2.691 6-6 6s-6-2.691-6-6a5.999 5.999 0 0 1 3-5.188V5.589C6.072 6.779 4 9.65 4 13c0 4.411 3.589 8 8 8z"></path><path d="M11 2h2v10h-2z"></path></svg></div>
+                                <div class="button edit" ><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="70%" viewBox="0 0 24 24" style="fill: rgb(0, 30, 255);transform: msFilter"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></div>
+                                <div class="button delete"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="70%" viewBox="0 0 24 24" style="fill: rgb(255, 0, 0);transform: msFilter"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg></div>
+                            </div>
+                        </div>
+                        <div class="other-info">
+                            <div class="views" ><div class="count v" ><p>100</p></div><svg class="vs"  xmlns="http://www.w3.org/2000/svg" width="50%" height="70%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg></div>
+                            <div class="likes" ><div class="count l" ><p>500</p></div><svg class="ls" xmlns="http://www.w3.org/2000/svg" width="50%" height="70%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M20 8h-5.612l1.123-3.367c.202-.608.1-1.282-.275-1.802S14.253 2 13.612 2H12c-.297 0-.578.132-.769.36L6.531 8H4c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h13.307a2.01 2.01 0 0 0 1.873-1.298l2.757-7.351A1 1 0 0 0 22 12v-2c0-1.103-.897-2-2-2zM4 10h2v9H4v-9zm16 1.819L17.307 19H8V9.362L12.468 4h1.146l-1.562 4.683A.998.998 0 0 0 13 10h7v1.819z"></path></svg></div>
+                            <div class="comments" ><div class="count c" ><p>200</p></div><svg class="icon cs" xmlns="http://www.w3.org/2000/svg" width="50%" height="70%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M7 7h10v2H7zm0 4h7v2H7z"></path><path d="M20 2H4c-1.103 0-2 .897-2 2v18l5.333-4H20c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 14H6.667L4 18V4h16v12z"></path></svg></div>
+                        </div>
+                    </div>
+                    <div class="coms" >
+                        <div class="comm" >
+                            <div class="auth" >
+                                <div class="ava" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="100%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"></path></svg></div>
+                                <div class="nameAuth" ><p>matvey</p></div>
+                                <div class="options" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></div>
+                            </div>
+                            <p>Hello</p>
+                            <div class="lastInfo" >
+                                <div class="verificated" ><p style="color: rgb(0, 178, 0)" >verificated</p></div>
+                                <div class="date" ><p>01.01.2021</p></div>
+                            </div>
+                        </div>
+                        <div class="message" >
+                            <textarea placeholder="Enter the message" ></textarea>
+                            <svg class="icon send" xmlns="http://www.w3.org/2000/svg" width="10%" height="100%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M20.56 3.34a1 1 0 0 0-1-.08l-17 8a1 1 0 0 0-.57.92 1 1 0 0 0 .6.9L8 15.45v6.72L13.84 18l4.76 2.08a.93.93 0 0 0 .4.09 1 1 0 0 0 .52-.15 1 1 0 0 0 .48-.79l1-15a1 1 0 0 0-.44-.89zM18.1 17.68l-5.27-2.31L16 9.17l-7.65 4.25-2.93-1.29 13.47-6.34z"></path></svg>
+                        </div>
+                        
+                    </div>
                 </div>
-                <div class="salary">
-                    <p>100 000</p>
-                </div>
-                <div class="act">
-                    <div class="button active" ><img class="a" src="..\static\css\act_green.png"></div>
-                    <div class="button edit" ><img src="..\static\css\edit.png"></div>
-                    <div class="button delete"><img src="..\static\css\delete.png"></div>
-                </div>
             </div>
-            <div class="other-info">
-
-            </div>
-            </div>
-            </div>
+            {% csrf_token %}
             <script>
-            console.log()
             if (window.location.href.split('/')[3] == 'createPort') {
                 console.log('here')
                 window.location.href = '/portfolios'
@@ -46,13 +69,13 @@
                     .then(res => {
                         window.location.href = '/portfolios'
                     })
-            }
+                }
             fetch('/getPorts')
                 .then(res => res.text())
                 .then(ans => {
-                    ports = JSON.parse(ans)
-                    console.log(ports)
-                    for(let p of ports) {
+                    ps = JSON.parse(ans)
+                    console.log(ps)
+                    for(let p of ps) {
                         let port = document.createElement('div')
                         port.className = 'port'
                         port.insertAdjacentHTML('beforeend',`
@@ -64,18 +87,99 @@
                                 <p>${p.salary}</p>
                             </div>
                             <div class="act">
-                                <div class="button active" ><img class="a" src="../static/css/act_green.png"></div>
-                                <div class="button edit" ><img src="../static/css/edit.png"></div>
-                                <div class="button delete"><img src="../static/css/delete.png"></div>
+                                <div class="button active" ><svg class='activate' xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill: rgb(0, 255, 13);transform: ;msFilter:;"><path d="M12 21c4.411 0 8-3.589 8-8 0-3.35-2.072-6.221-5-7.411v2.223A6 6 0 0 1 18 13c0 3.309-2.691 6-6 6s-6-2.691-6-6a5.999 5.999 0 0 1 3-5.188V5.589C6.072 6.779 4 9.65 4 13c0 4.411 3.589 8 8 8z"></path><path d="M11 2h2v10h-2z"></path></svg></div>
+                                <div class="button edit" ><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill: rgb(0, 30, 255);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></div>
+                                <div class="button delete"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" style="fill: rgb(255, 0, 0);transform: ;msFilter:;"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg></div>
                             </div>
                         </div>
                         <div class="other-info">
-
+                            <div class="views" ><div class="count v" ><p>100</p></div><svg class="vs"  xmlns="http://www.w3.org/2000/svg" width="50%" height="70%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg></div>
+                            <div class="likes" ><div class="count l" ><p>500</p></div><svg class="ls" xmlns="http://www.w3.org/2000/svg" width="50%" height="70%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M20 8h-5.612l1.123-3.367c.202-.608.1-1.282-.275-1.802S14.253 2 13.612 2H12c-.297 0-.578.132-.769.36L6.531 8H4c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h13.307a2.01 2.01 0 0 0 1.873-1.298l2.757-7.351A1 1 0 0 0 22 12v-2c0-1.103-.897-2-2-2zM4 10h2v9H4v-9zm16 1.819L17.307 19H8V9.362L12.468 4h1.146l-1.562 4.683A.998.998 0 0 0 13 10h7v1.819z"></path></svg></div>
+                            <div class="comments" ><div class="count c" ><p>200</p></div><svg class="icon cs" xmlns="http://www.w3.org/2000/svg" width="50%" height="70%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M7 7h10v2H7zm0 4h7v2H7z"></path><path d="M20 2H4c-1.103 0-2 .897-2 2v18l5.333-4H20c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 14H6.667L4 18V4h16v12z"></path></svg></div>
                         </div>`
                         )
-                        document.getElementById('ports').append(port)
+                        let pAc = document.createElement('div')
+                        pAc.className = 'portAndComs'
+                        pAc.id = 'prt' + p.id
+                        pAc.append(port)
+                        let commsBlock = document.createElement('div')
+                        commsBlock.className = 'coms'
+                        commsBlock.style.display = 'none'
+                        commsBlock.insertAdjacentHTML('beforeend', `<div class="message">
+                            <textarea placeholder="Enter the message" ></textarea>
+                            <svg class="icon send" xmlns="http://www.w3.org/2000/svg" width="10%" height="100%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M20.56 3.34a1 1 0 0 0-1-.08l-17 8a1 1 0 0 0-.57.92 1 1 0 0 0 .6.9L8 15.45v6.72L13.84 18l4.76 2.08a.93.93 0 0 0 .4.09 1 1 0 0 0 .52-.15 1 1 0 0 0 .48-.79l1-15a1 1 0 0 0-.44-.89zM18.1 17.68l-5.27-2.31L16 9.17l-7.65 4.25-2.93-1.29 13.47-6.34z"></path></svg>
+                        </div>`)
+                        pAc.append(commsBlock)
+                        ports.append(pAc)
+
                         document.getElementsByClassName('edit')[(document.getElementsByClassName('edit').length - 1)].onclick = () => {
-                            window.location.href = `/${p.id}_&&port`
+                            window.location.href = `/${pAc.id}_&&port`
+                        }
+                        document.getElementsByClassName('delete')[(document.getElementsByClassName('edit').length - 1)].onclick = () => {
+                            fetch(`/deleteOne_${pAc.id}`)
+                                .then( () => window.location.href = '/portfolios')
+                        }
+                        document.getElementsByClassName('cs')[(document.getElementsByClassName('cs').length - 1)].onclick = () => {
+                            console.log('here')
+                            fetch(`/getCommentsByPortId__${p.id}`)
+                                .then((res) => res.text() )
+                                .then( t => {
+                                    if (document.getElementById(pAc.id).lastElementChild.style.display == 'block') {
+                                        while(document.getElementById(pAc.id).lastElementChild.firstElementChild.className != 'message') {
+                                            document.getElementById(pAc.id).lastElementChild.firstElementChild.remove()
+                                        }
+                                        document.getElementById(pAc.id).lastElementChild.style.display = 'none'
+                                    }else {
+                                    console.log(pAc)
+                                    obj = JSON.parse(t)
+                                    for(let c of obj) {
+                                        console.log(c)
+                                        console.log('here')
+                                        document.getElementById(pAc.id).lastElementChild.insertAdjacentHTML('afterbegin',`<div class="comm" >
+                                            <div class="auth" >
+                                                <div class="ava" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="100%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"></path></svg></div>
+                                                <div class="nameAuth" ><p>${c.author}</p></div>
+                                                <div class="options" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></div>
+                                            </div>
+                                            <p>${c.text}</p>
+                                            <div class="lastInfo" >
+                                                <div class="verificated" ><p style="color: rgb(0, 178, 0)" >${c.verified}</p></div>
+                                                <div class="date" ><p>${c.date}</p></div>
+                                            </div>
+                                        </div>`)
+                                    }
+                                        document.getElementById(pAc.id).lastElementChild.style.display = 'block'
+                                    }
+                                    
+                                    
+                                } )
+                        }
+                        document.getElementsByClassName('send')[(document.getElementsByClassName('send').length - 1)].onclick = () => {
+                            let data = {'text' : pAc.lastElementChild.lastElementChild.firstElementChild.value, 'idToPort' : p.id}
+                            console.log(data)
+                            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                            fetch('/sendComment', {
+                                method : 'POST',
+                                headers: {
+                                    'Content-Type' : 'application/json;charset=utf-8',
+                                    "X-CSRFToken" : csrftoken
+                                },
+                                body: JSON.stringify(data)
+                            }). then(ans => ans.text() ).then( (obj) => {
+                                    console.log(obj)
+                                    obj = JSON.parse(obj)
+                                    pAc.lastElementChild.insertAdjacentHTML('afterbegin', `<div class="comm" >
+                                    <div class="auth" >
+                                        <div class="ava" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="100%" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"></path></svg></div>
+                                        <div class="nameAuth" ><p>${obj.author}</p></div>
+                                    </div>
+                                    <p>${obj.text}</p>
+                                    <div class="lastInfo" >
+                                        <div class="verificated" ><p style="color: rgb(0, 178, 0)" >${obj.verified}</p></div>
+                                        <div class="date" ><p>${obj.date}</p></div>
+                                    </div>
+                                </div>`)
+                                })
                         }
                         
                     }
@@ -83,13 +187,22 @@
                     let edits = document.getElementsByClassName('edit')
                     for(let el of acts) {
                         el.onclick = () => {
-                            if (el.firstElementChild.class == 'a') {
-                                el.firstElementChild.class = 'd'
-                                el.firstElementChild.src = '../static/css/act_red.png'
+                            if (el.firstElementChild.className.baseVal == 'activate') {
+                                console.log('here')
+                                el.firstElementChild.className.baseVal = 'deactivate'
+                                el.firstElementChild.style.fill = 'rgb(255, 0, 0)'
                             }else {
-                                 el.firstElementChild.class = 'a'
-                                el.firstElementChild.src = '../static/css/act_green.png'
+                                el.firstElementChild.className.baseVal = 'activate'
+                                el.firstElementChild.style.fill = 'rgb(0, 255, 13)'
                             }
+                        }
+                    }
+                    for(let el of document.getElementsByClassName('icon')) {
+                        el.onmouseover = () => {
+                            el.style.fill = 'blue'
+                        }
+                        el.onmouseout = () => {
+                            el.style.fill = 'black'
                         }
                     }
 
