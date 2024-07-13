@@ -153,6 +153,3 @@ def getCommentsByPortId(req):
         print(obj)
         data.append(obj)
     return HttpResponse(str(json.dumps(data)), content_type='text/plain')
-def sendCss(req) :
-    f = open('../static/css/static6.css').readlines()
-    return HttpResponse(f, content_type='text/css')
