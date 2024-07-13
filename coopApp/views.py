@@ -3,6 +3,7 @@ from .models import Portfolio
 from .models import Comment
 from django.http import HttpResponse
 import json
+from pathlib import Path
 # port = Portfolio.objects.create(name='HUi', occupation='Killer')
 # async def getPort():
 #     port = await Portfolio.objects.aget(id=1)
@@ -12,7 +13,7 @@ import json
 
 
 
-
+STATIC = Path(Path(__file__).resolve().parent.parent, 'static', 'cop', 'css', 'style6.css')
 def getPorts(req):
     ports = Portfolio.objects.all()
     data = []
@@ -95,6 +96,7 @@ def editPort(req):
 '''-----------------------Pages-------------------------'''
 
 def homepage(request):
+    print(open(STATIC).readlines())
     return render(request, 'indexx.html')
 
 def portfolios(req):
@@ -153,3 +155,5 @@ def getCommentsByPortId(req):
         print(obj)
         data.append(obj)
     return HttpResponse(str(json.dumps(data)), content_type='text/plain')
+def getCss(req):
+    return HttpResponse(open(STATIC).readlines(), content_type='text/css')
