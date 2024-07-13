@@ -14,3 +14,11 @@ class Portfolio(models.Model):
     age = models.IntegerField(default=1)
     ifOnlineWork = models.CharField(max_length=40,default='DEFAULT VALUE')
     about = models.CharField(max_length=40, default='DEFAULT VALUE')
+class Comment(models.Model):
+    text = models.CharField(max_length=100, default='none')
+    date = models.CharField(max_length=15, default='none')
+    ref = models.CharField(max_length=10, default='none')
+    author = models.CharField(max_length=50, default='anonym')
+    verified = models.CharField(max_length=20,default='verificated')
+    idToPort = models.CharField(max_length=20,default='none')
+

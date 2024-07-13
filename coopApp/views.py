@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Portfolio
+from .models import Comment
 from django.http import HttpResponse
-import asyncio
 import json
 # port = Portfolio.objects.create(name='HUi', occupation='Killer')
 # async def getPort():
@@ -112,4 +112,47 @@ def deleteAll(req):
     print('here')
     Portfolio.objects.all().delete()
     return HttpResponse('ok')
+def deleteOne(req):
+    Portfolio.objects.get(id=req.path.split('/deleteOne_')[1]).delete()
+    return HttpResponse('ok')
+def search(req):
+    return render(req, 'search.html')
+def sendComment(req):
+    data =  json.loads(req.body)
+    print(type(data))
+    Comment.objects.create(
+        text=data['text'],
+        date='01.01.2021',
+        ref='none',
+        author='anonym',
+        verified='verificated',
+        idToPort=data['idToPort'],
+    )
+    obj = {
+        'text' : data['text'],
+        'date' : '01.01.2021',
+        'ref' : 'none',
+        'author' : 'anonym',
+        'verified' : 'verificated',
+        'idToPort' : data['idToPort'],
+    }
+    return HttpResponse(str(json.dumps(obj)), content_type='text/plain')
+def getCommentsByPortId(req):
+    ID = req.path.split('__')[1]
+    print(ID)
+    comments = Comment.objects.filter(idToPort=ID)
+    data = []
+    for comment in comments:
+        obj = {}
+        obj['text'] = comment.text
+        obj['date'] = comment.date
+        obj['ref'] = comment.ref
+        obj['author'] = comment.author
+        obj['verified'] = comment.verified
+        obj['idToPort'] = comment.idToPort
+        print(obj)
+        data.append(obj)
+    return HttpResponse(str(json.dumps(data)), content_type='text/plain')
+    
+
 
