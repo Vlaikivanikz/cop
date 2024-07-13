@@ -170,7 +170,6 @@
                                 },
                                 body: JSON.stringify(data)
                             }). then(ans => ans.text() ).then( (obj) => {
-                                    console.log(obj)
                                     obj = JSON.parse(obj)
                                     pAc.lastElementChild.insertAdjacentHTML('afterbegin', `<div class="comm" >
                                     <div class="auth" >
