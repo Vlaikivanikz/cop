@@ -13,7 +13,7 @@ urlpatterns = [
     re_path(r'^getOnePort__', views.getPortById),
     re_path(r'^editPort__', views.editPort),
     path('delete', views.deleteAll),
-    path('search', views.search),
+    path('find', views.search),
     re_path(r'^deleteOne_', views.deleteOne),
     path('sendComment', views.sendComment),
     re_path(r'^getCommentsByPortId__', views.getCommentsByPortId)

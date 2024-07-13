@@ -116,7 +116,7 @@ def deleteOne(req):
     Portfolio.objects.get(id=req.path.split('/deleteOne_')[1]).delete()
     return HttpResponse('ok')
 def search(req):
-    return render(req, 'search.html')
+    return render(req, 'find.html')
 def sendComment(req):
     data =  json.loads(req.body)
     print(type(data))
