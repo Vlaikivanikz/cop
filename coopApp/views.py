@@ -137,6 +137,7 @@ def sendComment(req):
         'verified' : 'verificated',
         'idToPort' : data['idToPort'],
     }
+    print(obj)
     return HttpResponse(str(json.dumps(obj)), content_type='text/plain')
 def getCommentsByPortId(req):
     ID = req.path.split('__')[1]
