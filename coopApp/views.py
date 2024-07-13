@@ -28,7 +28,7 @@ def getPorts(req):
         obj['skills'] = p.skills
         obj['citizenship'] = p.citizenship
         obj['location'] = p.location
-        obj['photo'] = p.photo
+        # obj['photo'] = p.photo
         obj['contacts'] = p.contacts
         obj['age'] = p.age
         obj['ifOnlineWork'] = p.ifOnlineWork
