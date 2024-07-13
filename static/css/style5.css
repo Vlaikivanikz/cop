@@ -302,7 +302,7 @@ body{
 }
 
 .button:hover {
-    background-color: rgb(223, 223, 223);
+    background-color: rgb(190, 190, 190);
 }
 #deleteAll {
     display: flex;
@@ -321,16 +321,3 @@ body{
 #deleteAll:hover {
     background-color: red;
 }
-#flexBody {
-    display: flex;
-}
-#sidenav {
-    width: 10%;
-}
-#mainbody {
-    width: 90%;
-}
-.button img{
-    height: 100%;
-}
-
