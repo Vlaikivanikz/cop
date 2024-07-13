@@ -16,6 +16,5 @@ urlpatterns = [
     path('find', views.search),
     re_path(r'^deleteOne_', views.deleteOne),
     path('sendComment', views.sendComment),
-    re_path(r'^getCommentsByPortId__', views.getCommentsByPortId),
-    path('static6.css', views.sendCSS)
+    re_path(r'^getCommentsByPortId__', views.getCommentsByPortId)
 ]
