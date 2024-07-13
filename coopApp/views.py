@@ -153,6 +153,7 @@ def getCommentsByPortId(req):
         obj['idToPort'] = comment.idToPort
         print(obj)
         data.append(obj)
+    print(data)
     return HttpResponse(str(json.dumps(data)), content_type='text/plain')
 def getCss(req):
     name = req.path[6:]
