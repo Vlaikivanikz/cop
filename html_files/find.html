@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <p>ayy</p>
+        <div id="ps" ></div>
         <script>
             fetch('/getPorts')
                 .then(o => o.text())
@@ -69,6 +69,7 @@
                         port1.insertAdjacentHTML('beforeend',`
                         <p>${p.occupation}</p>
                         `)
+                        ps.append(port1)
                     }
                 }
                 )
