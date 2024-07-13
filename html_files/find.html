@@ -54,6 +54,22 @@
                 </div>
             </div>
         </div>
+        <p>ayy</p>
+        <script>
+            fetch('/getPorts')
+                .then(o => o.text())
+                .then(ans => {
+                    let piska = JSON.parse(ans)
+                    for(let p of piska) {
+                        let port1 = document.createElement('div')
+                        port1.className = 'res_block'
+                        port1.insertAdjacentHTML('beforeend',`
+                        <p>${p.occupation}</p>
+                        `)
+                    }
+                }
+                )
+        </script>
     </div>
 </body>
 </html>
