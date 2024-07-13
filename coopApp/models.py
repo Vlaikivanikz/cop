@@ -21,4 +21,9 @@ class Comment(models.Model):
     author = models.CharField(max_length=50, default='anonym')
     verified = models.CharField(max_length=20,default='verificated')
     idToPort = models.CharField(max_length=20,default='none')
+class User(models.Model):
+    userName = models.CharField(max_length=20)
+    password = models.CharField(max_length=20)
+    email = models.CharField(max_length=30)
+    
 

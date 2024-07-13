@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\css\signup.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <div id="sign-up-form" >
+        <div id="form" >
+            <h1> Sign up </h1>
+            <div class="iblock nick" >
+                <div class="enter" >
+                    <h3 style="margin-bottom: 0px;" > Enter your nickname: </h3>
+                    <input id='nickname' >
+                </div>
+                <div class="error" >
+                    <!-- <div class="traingle" style="display: none"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg></div> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style=" display : none;  fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg>
+                    <div class="alert" style="display: none"><p></p></div>
+                </div>
+                
+            </div>
+            <div class="iblock email" >
+                <div class="enter">
+                    <h3 style="margin-bottom: 0px;" > Enter your e-mail: </h3>
+                    <input id="mail" >
+                </div>
+                <div class="error" >
+                    <!-- <div class="traingle" style="display: none"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg></div> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12%" height="50%" viewBox="0 0 24 24" style=" display : none;  fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg>
+                    <div class="alert" style="display: none"><p></p></div>
+                </div>
+                
+            </div>
+            <div class="iblock pass" >
+                <div class="enter">
+                    <h3 style="margin-bottom: 0px;" > Make up a password: </h3>
+                    <input id="password">
+                </div>
+                <div class="error" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12%" height="50%" viewBox="0 0 24 24" style=" display : none;  fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg>
+                    <div class="alert" style="display: none"><p></p></div>
+                </div>
+                
+            </div>
+            <div class="iblock cpass" >
+                <div class="enter">
+                    <h3 style="margin-bottom: 0px;" > Confirm the password: </h3>
+                    <input id="confirmPassword" >
+                </div>
+                <div class="error" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12%" height="50%" viewBox="0 0 24 24" style=" display : none;  fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg>
+                    <div class="alert" style="display: none"><p></p></div>
+                </div>
+            </div>
+            <div id="signButton" >
+                <h2>Sign up</h2>
+            </div>
+            <script>
+                function animate(elements) {
+                    for(let el of elements) {
+                        el.parentElement.nextElementSibling.lastElementChild.style.display = 'flex'
+                        el.parentElement.nextElementSibling.firstElementChild.style.display = 'block'
+                    }
+                    let start = Date.now();
+                    let timer = setInterval( () => {
+                        let timePassed = Date.now() - start
+                        if (timePassed >= Math.PI / 7 * 1000) {
+                            for(let el of elements) {
+                                el.parentElement.nextElementSibling.lastElementChild.style.marginBottom = '0px'
+                            }
+                            clearInterval(timer);
+                            return;
+                        }
+                        iter(timePassed,elements);
+                    }, 17 )
+                }
+                function iter(t,elements) {
+                    for(let el of elements) {
+                        el.parentElement.nextElementSibling.lastElementChild.style.marginBottom = 3 * 3**(-0.4*t/1000) * Math.sin(7 * t) + 'px';
+                    }
+                    
+                }
+                
+                signButton.onclick = () => {
+                    let arr = []
+                    for(let i of document.getElementsByTagName('input')) {
+                        if (i.id == 'mail') {
+                            if (!/^.+@.+\..+$/.test(i.value)) {
+                                console.log('herer')
+                                arr.push(mail)
+                                mail.parentElement.nextElementSibling.lastElementChild.firstElementChild.innerHTML = 'Incorrect e-mail adress'
+                            }
+                        }
+                        if (i.id == 'confirmPassword') {
+                            if (confirmPassword.value != password.value) {
+                                console.log('herer')
+                                arr.push(confirmPassword)
+                                arr.push(password)
+                                confirmPassword.parentElement.nextElementSibling.lastElementChild.firstElementChild.innerHTML = 'Passwords are different'
+                                password.parentElement.nextElementSibling.lastElementChild.firstElementChild.innerHTML = 'Passwords are different'
+                            }
+                    }
+                    }
+                    console.log(arr)
+                    animate(arr)
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
