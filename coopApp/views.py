@@ -19,19 +19,19 @@ def getPorts(req):
     for p in ports:
         obj = {}
         obj['id'] = p.id
-        # obj['name'] = p.name
+        obj['name'] = p.name
         obj['occupation'] = p.occupation
         obj['salary'] = p.salary
-        # obj['exp'] = p.exp
-        # obj['education'] = p.education
-        # obj['skills'] = p.skills
-        # obj['citizenship'] = p.citizenship
-        # obj['location'] = p.location
-        # obj['photo'] = p.photo
-        # obj['contacts'] = p.contacts
-        # obj['age'] = p.age
-        # obj['ifOnlineWork'] = p.ifOnlineWork
-        # obj['about'] = p.about
+        obj['exp'] = p.exp
+        obj['education'] = p.education
+        obj['skills'] = p.skills
+        obj['citizenship'] = p.citizenship
+        obj['location'] = p.location
+        obj['photo'] = p.photo
+        obj['contacts'] = p.contacts
+        obj['age'] = p.age
+        obj['ifOnlineWork'] = p.ifOnlineWork
+        obj['about'] = p.about
         data.append(obj)
     return HttpResponse(str(json.dumps(data)), content_type='text/plain')
 def createPort(req):

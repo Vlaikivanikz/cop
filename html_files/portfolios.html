@@ -73,8 +73,7 @@
             fetch('/getPorts')
                 .then(res => res.text())
                 .then(ans => {
-                    ps = JSON.parse(ans)
-                    console.log(ps)
+                    let ps = JSON.parse(ans)
                     for(let p of ps) {
                         let port = document.createElement('div')
                         port.className = 'port'
@@ -208,7 +207,7 @@
 
                 })
             }
-            
+                        
             </script>
         </div>
     </div>
