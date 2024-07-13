@@ -17,5 +17,5 @@ urlpatterns = [
     re_path(r'^deleteOne_', views.deleteOne),
     path('sendComment', views.sendComment),
     re_path(r'^getCommentsByPortId__', views.getCommentsByPortId),
-    path('css', views.getCss)
+    re_path(r'^css__', views.getCss)
 ]

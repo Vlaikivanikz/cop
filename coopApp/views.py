@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 
-STATIC = Path(Path(__file__).resolve().parent.parent, 'static', 'cop', 'css', 'style6.css')
+STATIC = Path(Path(__file__).resolve().parent.parent, 'static', 'cop', 'css')
 def getPorts(req):
     ports = Portfolio.objects.all()
     data = []
@@ -96,7 +96,6 @@ def editPort(req):
 '''-----------------------Pages-------------------------'''
 
 def homepage(request):
-    print(open(STATIC).readlines())
     return render(request, 'indexx.html')
 
 def portfolios(req):
@@ -156,4 +155,5 @@ def getCommentsByPortId(req):
         data.append(obj)
     return HttpResponse(str(json.dumps(data)), content_type='text/plain')
 def getCss(req):
-    return HttpResponse(open(STATIC).readlines(), content_type='text/css')
+    name = req.path[6:]
+    return HttpResponse(open(Path(STATIC, name)).readlines(), content_type='text/css')
