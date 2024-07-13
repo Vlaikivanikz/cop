@@ -18,7 +18,7 @@
     color: white;
 } */
 body{
-    background-color: #060A0D;
+    background-color: white;
 }
 
 
@@ -46,11 +46,12 @@ body{
     font-family: 'Urbanist';
 }
 
-.main_hdr h2{
-    font-family: 'Righteous';
+.main_hdr{
     font-size: 300%;
-    margin-left: 2%;
+    display: flex;
 }
+
+
 
 
 .main_btns {

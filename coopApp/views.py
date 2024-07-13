@@ -11,6 +11,8 @@ import json
 
 
 
+
+
 def getPorts(req):
     ports = Portfolio.objects.all()
     data = []
@@ -89,12 +91,23 @@ def editPort(req):
     p.about=req.POST.get('about')
     p.save()
     return render(req, 'portfolios.html')
+
+'''-----------------------Pages-------------------------'''
+
 def homepage(request):
     return render(request, 'indexx.html')
+
 def portfolios(req):
     return render(req, 'portfolios.html')
+
 def creation(req):
     return render(req, 'createPort.html')
+
+def find(req):
+    return render(req, 'find.html')
+
+'''-----------------------------------------------------'''
+
 def deleteAll(req):
     print('here')
     Portfolio.objects.all().delete()
