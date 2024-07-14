@@ -29,7 +29,6 @@ if os.path.isfile(dotenv_file):
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
-dotenv.load_dotenv[SECRET_KEY]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -91,12 +90,12 @@ WSGI_APPLICATION = 'ccop.wsgi.app'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ("ENGINE"),
-        'HOST': os.environ("HOST"),
-        'NAME': os.environ("NAME"),
-        'USER': os.environ("USER"),
-        'PASSWORD': os.environ("PASSWORD"),
-        'HOST': os.environ("HOST"),
+        'ENGINE': os.environ['ENGINE'],
+        'HOST': os.environ['HOST'],
+        'NAME': os.environ['NAME'],
+        'USER': os.environ['USER'],
+        'PASSWORD': os.environ['PASSWORD'],
+        'HOST': os.environ['HOST'],
     }
 }
 
