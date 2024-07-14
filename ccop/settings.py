@@ -32,7 +32,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh', 'aws-0-eu-central-1.pooler.supabase.com']
 
 # Application definition
 
@@ -95,7 +95,7 @@ DATABASES = {
         'NAME': os.environ['NAME'],
         'USER': os.environ['USER'],
         'PASSWORD': os.environ['PASSWORD'],
-        'HOST': os.environ['HOST'],
+        'PORT': os.environ['PORT'],
     }
 }
 
