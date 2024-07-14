@@ -46,7 +46,7 @@ def createPort(req):
         skills=req.POST.get('skills'),
         citizenship=req.POST.get('citizenship'),
         location=req.POST.get('location'),
-        photo=req.POST.get('photo'),
+        # photo=req.POST.get('photo'),
         contacts=req.POST.get('contacts'),
         age=req.POST.get('age'),
         ifOnlineWork=req.POST.get('ifOnlineWork'),
@@ -85,7 +85,7 @@ def editPort(req):
     p.skills=req.POST.get('skills')
     p.citizenship=req.POST.get('citizenship')
     p.location=req.POST.get('location')
-    p.photo=req.POST.get('photo')
+    # p.photo=req.POST.get('photo')
     p.contacts=req.POST.get('contacts')
     p.age=req.POST.get('age')
     p.ifOnlineWork=req.POST.get('ifOnlineWork')
