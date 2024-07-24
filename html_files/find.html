@@ -17,21 +17,21 @@
             Cooperative
         </div>
         <div class="side-nav">
-            <div class="item">
+            <div class="item" id="home">
                 <i class='bx bx-briefcase-alt-2' ></i>
-                <a href="#">Homepage</a>
+                <a href="/homepage">Homepage</a>
             </div>
             <div class="item active">
                 <i class='bx bx-search'></i>
                 <a href="#">Find</a>
             </div>
-            <div class="item">
+            <div class="item" id="create">
                 <i class='bx bx-layer-plus'></i>
-                <a href="#">Create</a>
+                <a href="/creation">Create</a>
             </div>
-            <div class="item">
+            <div class="item" id="edit">
                 <i class='bx bxs-edit'></i>
-                <a href="#">Edit</a>
+                <a href="/portfolios">Edit</a>
             </div>
         </div>
         <div class="theme-switch">
@@ -49,7 +49,7 @@
             </div>
             <div class="bio">
                 <div class="portrait-img">
-                    <img src="..\static\css\portrait.png">
+                    <img src="..\static\cop\img\portrait.png">
                 </div>
                 <div class="pers-info">
                     <a href="#">Example Smith</a>
@@ -73,6 +73,15 @@
                     }
                 }
                 )
+        edit.onclick = () => {
+            window.location.href = '/portfolios'
+        }
+        home.onclick = () => {
+            window.location.href = '/homepage'
+        }
+        create.onclick = () => {
+            window.location.href = '/creation'
+        }
         </script>
     </div>
 </body>
