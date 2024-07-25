@@ -13,7 +13,7 @@ class Portfolio(models.Model):
     contacts = models.CharField(max_length=40,default='DEFAULT VALUE')
     age = models.IntegerField(default=1)
     ifOnlineWork = models.CharField(max_length=40,default='DEFAULT VALUE')
-    about = models.CharField(max_length=40, default='DEFAULT VALUE')
+    about = models.CharField(max_length=500, default='DEFAULT VALUE')
 class Comment(models.Model):
     text = models.CharField(max_length=100, default='none')
     date = models.CharField(max_length=15, default='none')

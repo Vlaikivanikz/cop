@@ -49,7 +49,7 @@
             </div>
             <div class="bio">
                 <div class="portrait-img">
-                    <img src="..\static\cop\img\portrait.png">
+                    <img src="..\static\cop\img\portrait.png" alt="">
                 </div>
                 <div class="pers-info">
                     <a href="#">Example Smith</a>
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div id="ps" ></div>
+        <div id="ps" class="ps"></div>
         <script>
             fetch('/getPorts')
                 .then(o => o.text())
@@ -67,7 +67,12 @@
                         let port1 = document.createElement('div')
                         port1.className = 'res_block'
                         port1.insertAdjacentHTML('beforeend',`
-                        <p>${p.occupation}</p>
+                        <div class="person-info">
+                            <h1>${p.name}</h1>
+                            <h2>${p.occupation} <i class='bx bxs-circle'></i> ${p.citizenship}</h2>
+                            <h3>About me</h3>
+                            <p>${p.about}</p>
+                        </div>
                         `)
                         ps.append(port1)
                     }
