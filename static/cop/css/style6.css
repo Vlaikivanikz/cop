@@ -23,7 +23,7 @@ body{
 
 
 .img1 {
-    background-image: url("background.png");
+    background-image: url("../static/img/background.png");
     background-size: no-repeat;
     position: absolute;
     background-position: center;
@@ -320,4 +320,8 @@ body{
 }
 #deleteAll:hover {
     background-color: red;
+}
+
+#crea label{
+    color: black;
 }
