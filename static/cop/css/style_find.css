@@ -1,90 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Nanum+Gothic&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Alegreya Sans';
-    box-sizing: border-box;
-    outline: none;
-}
-
-a{
-    text-decoration: none;
-    color: #a7a7a7a7;
-    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
 }
 
 body{
     display: flex;
     height: 100vh;
-    background-color: white;
 }
 
-.side-bar{
-    background: linear-gradient(#111, #363636);
-    flex: 1;
-    color: #a7a7a7a7;
+.side-nav{
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    justify-content: space-between;
+    flex: 1;
 }
-
-
 
 .container{
-    flex: 8;
-    padding: 20px 40px 20px 24px;
+    flex:6;
+    padding: 10px 40px 20px 24px;
 }
 
-.side-bar .side-nav {
+.side-nav .upper-icons{
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: space-evenly;
+    padding: 20px 0px 10px 0px; 
 }
 
-.side-bar .side-nav .item{
-    display: flex;
-    gap: 5px;
-    padding: 15px;
-    align-items: center;
-    border-radius: 10px;
-    cursor: pointer;
-    border-bottom: solid #111;
+.side-nav .filters{
+    background-color: #181C20;
+    height: 100vh;
+    border-radius: 10px / 0px 10px 0px 0px;
 }
 
-.side-bar .side-nav .item a{
-    color: white;
-    transition: all 0.2s ease;
+.side-nav .filters{
+    color: #adadad;
+    padding: 10px 10px;
+    gap: 20px;
+    font-family:'Montserrat Alternates';
 }
 
-.side-bar .side-nav .item i{
-    color: white;
-    font-size: 20px;
-    transition: all 0.2s ease;
+.side-nav .upper-icons p i{
+    font-size: 30px;
 }
-
-.side-bar .side-nav .item.active{
-    background: #7E6F64;
-    transition: all 0.2s ease;
-    border: none;
-}
-
-/* .side-bar .side-nav .item.active a, 
-.side-bar .side-nav .item.active i{
-    color: #111;
-    font-weight: bold;
-} */
-
-.side-bar .theme-switch {
-    border-radius: 10px;
-    border: dashed;
-    transition: all 0.2s ease;
-    border-color: #a7a7a7a7;
-    text-align: center;
-    padding: 10px;
-    cursor: pointer;
+.side-nav .upper-icons .active{
+    color: #80A416;
+    border-bottom: solid #80A416;
 }
 
 .container .upper-nav{
@@ -94,31 +55,11 @@ body{
     gap: 20px;
 }
 
-.container .upper-nav .nav-btn{
-    background-color: #111;
-    cursor: pointer;
-    padding: 10px;
-    align-items: center;
-    border-radius: 10px;
-    display: none;
-}
-
-.container .upper-nav .nav-btn i{
-    font-size: 20px;
-    color: white;
-}
-
-.container .upper-nav .nav-btn button{
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
 .container .upper-nav .search{
-    background-color: #E5E3DE;
+    background-color: #181C20;
     align-items: center;
     padding: 15px;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 100%;
     display: flex;
 }
@@ -126,6 +67,10 @@ body{
     width: 100%;
     border: none;
     background: transparent;
+}
+
+.container .upper-nav .search i{
+    color: #adadad;
 }
 
 .container .upper-nav .bio{
@@ -136,6 +81,7 @@ body{
 .container .upper-nav .bio .pers-info{
     text-align: left;
     padding: 5px 0px 0px 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container .upper-nav .bio .portrait-img img{
@@ -149,27 +95,108 @@ body{
     color: black;
 }
 
-.container .ps{
-    display: block;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.container .ps .person-info{
-    background-color: #cecccc;
-    width: 70%;
-    height: 100%;
-    border-radius: 15px;
-    padding: 10px;
-    margin-top: 10px;
-}
-.container .ps .person-info h2{
+.container .main-filters{
     display: inline-flex;
-    color: #363636;
 }
 
-.container .ps .person-info h2 i{
-    font-size: 6px;
-    margin-top: 10px;
-    padding: 0px 7px 0px 7px;
+.portfolios{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 1fr 1fr;
+}
+
+.portfolios .port-form{
+    background-color: #181C20;
+    width: 95%;
+    aspect-ratio: 15/7;
+    margin: 20px 0px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.portfolios .port-form .photos-block{
+    flex: 7;
+    padding: 0px 10px;
+}
+
+.portfolios .port-form .photos-block img{
+    width: 100%;
+    aspect-ratio: 12/6;
+    border-radius: 15px;
+    border: solid #6c6a71;
+}
+
+.portfolios .port-form .photos-block .block{
+    background: #65797b;
+    width: 30%;
+    aspect-ratio: 6/1;
+    margin: 5% auto;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+
+.portfolios .port-form .info-block{
+    flex: 6;
+}
+
+.portfolios .port-form .info-block .avatar{
+    display: flex;
+}
+
+.portfolios .port-form .info-block .avatar .image{
+    width: 20%;
+}
+
+.portfolios .port-form .info-block .avatar img{
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.portfolios .port-form .info-block .avatar .name{
+    margin-left: 5%;
+    padding-top: 1%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.portfolios .port-form .info-block .avatar .name h3{
+    color: #4298B5;
+}
+
+.portfolios .port-form .info-block .about{
+    padding: 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.portfolios .port-form .info-block .tags{
+    display: flex;
+    gap: 2%;
+    padding: 1% 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.portfolios .port-form .info-block .tags .tag{
+    background: linear-gradient(to right, #032820, #08652C, #80A416);
+    border-radius: 15px;
+    color: #FFFFFF;
+    padding: 2px 10px;
+}
+
+
+.portfolios .port-form .info-block .actions{
+    padding: 5% 5%;
+}
+
+.portfolios .port-form .info-block .actions button{
+    border: none;
+    color: #FFFFFF;
+    background-color: #497C57;
+    width: 40%;
+    border-radius: 15px;
+    aspect-ratio: 7/2;
 }
