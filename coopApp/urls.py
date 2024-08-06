@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 
 from coopApp.views import *
-from . import views
+from . import views, dbreqs
 
 urlpatterns = [
     path('', views.homepage),
@@ -18,5 +18,11 @@ urlpatterns = [
     re_path(r'^deleteOne_', views.deleteOne),
     path('sendComment', views.sendComment),
     re_path(r'^getCommentsByPortId__', views.getCommentsByPortId),
-    re_path(r'^css__', views.getCss)
+    re_path(r'^css__', views.getCss),
+    path('signup', views.signUp),
+    re_path(r'^isThisEmailRegistered__', dbreqs.ifEmail),
+    re_path(r'^isThisUserRegistered__', dbreqs.ifUser),
+    path('createUser', dbreqs.createUser),
+    path('login', views.login),
+    path('check', dbreqs.check)
 ]

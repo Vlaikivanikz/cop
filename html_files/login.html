@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css__signup.css">
+    <link rel="stylesheet" href="/css__login.css">
     <title>Sign up</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         </div> -->
         <div id="form" >
             
-            <h1> Регистрация </h1>
+            <h1> Вход в аккаунт </h1>
             <div class="iblock nick" >
                 <div class="space" ></div>
                 <div class="enter" >
@@ -33,23 +33,10 @@
                 </div>
                 
             </div>
-            <div class="iblock email" >
-                <div class="space" ></div>
-                <div class="enter">
-                    <h3 style="margin-bottom: 0px;" > Введите вашу почту: </h3>
-                    <p></p>
-                    <input id="mail" >
-                </div>
-                <div class="error" >
-                    <!-- <div class="traingle" style="display: none"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg></div> -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30%" height="50%" viewBox="0 0 24 24" style=" display : none;  fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg>
-                    <div class="alert" style="display: none"></div>
-                </div>
-            </div>
             <div class="iblock pass" >
                 <div class="space" ></div>
                 <div class="enter">
-                    <h3 style="margin-bottom: 0px;" > Придумайте пароль: </h3>
+                    <h3 style="margin-bottom: 0px;" > Введите пароль: </h3>
                     <p></p>
                     <input id="password">
                 </div>
@@ -59,20 +46,8 @@
                 </div>
                 
             </div>
-            <div class="iblock cpass" >
-                <div class="space" ></div>
-                <div class="enter">
-                    <h3 style="margin-bottom: 0px;" > Подтвердите пароль: </h3>
-                    <p></p>
-                    <input id="confirmPassword" >
-                </div>
-                <div class="error" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30%" height="50%" viewBox="0 0 24 24" style=" display : none;  fill: rgb(200, 19, 19);transform: msFilter"><path d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"></path></svg>
-                    <div class="alert" style="display: none"></div>
-                </div>
-            </div>
             <div id="signButton" >
-                <h2 id="signAnimate" >Зарегистрироваться</h2>
+                <h2 id="signAnimate" >Войти</h2>
             </div>
             {% csrf_token %}
             <script>
@@ -124,58 +99,49 @@
                 }
                 for(let i of document.getElementsByTagName('input')) {
                     i.onchange = () => {
-                        if (i.id == 'mail') {
-                            fetch(`/isThisEmailRegistered__${i.value}`)
-                                .then( ans => ans.text() )
-                                .then( res => {
-                                    console.log(res)
-                                    if (!/^.+@.+\..+$/.test(i.value)) {
-                                        console.log('herer')
-                                        // arr.push(mail)
-                                        i.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
-                                        i.previousElementSibling.innerHTML = 'Неправильный формат почты'
-                                        animate(i)
-                                    }else if(res == 'yes'){
-                                        i.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
-                                        i.previousElementSibling.innerHTML = 'Данная почта уже используется'
-                                        animate(i)
-                                    }else{
-                                        animateGood(i)
-                                    }
-                                })
-                            
-                        }
-                        if (i.id == 'confirmPassword' || i.id == 'password') {
-                            console.log('here')
-                            if (confirmPassword.value != password.value) {
-                                password.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
-                                confirmPassword.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
-                                confirmPassword.previousElementSibling.innerHTML = 'Введённые пароли не одинаковые'
-                                password.previousElementSibling.innerHTML = 'Введённые пароли не одинаковые'
-                                animate(password)
-                                animate(confirmPassword)
-                            }else if (i.value == ''){
-                                i.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
-                                i.previousElementSibling.innerHTML = 'Нельзя ввести пустой пароль'
-                                animate(i)
+                        if (i.id == 'password') {
+                            // console.log(nickname.parentElement.nextElementSibling.lastElementChild.style.display)
+                            if (nickname.parentElement.nextElementSibling.style.display == 'none') {
+                                let data = {
+                                    'userName' : nickname.value,
+                                    'password' : password.value
+                                }
+                                fetch(`/check`, {
+                                    method : 'POST',
+                                    headers: {
+                                        'Content-Type' : 'application/json;charset=utf-8',
+                                        "X-CSRFToken" : csrftoken
+                                    },
+                                    body: JSON.stringify(data)
+                                }).
+                                    then( (ans) => ans.text() ).
+                                    then( (res) => {
+                                        if (res == 'no'){
+                                            console.log('here')
+                                            i.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
+                                            i.previousElementSibling.innerHTML = 'Неправильный пароль'
+                                            animate(i)
+                                        }else {
+                                            console.log('he123re')
+                                            animateGood(password)
+                                        }
+                                    } )
                             }else {
-                                animateGood(confirmPassword)
-                                animateGood(password)
+                                let change = new Event('change')
+                                nickname.dispatchEvent(change)
                             }
                         }
                         if (i.id == 'nickname') {
                             fetch(`/isThisUserRegistered__${i.value}`)
                                 .then( ans => ans.text() )
                                 .then( res => {
-                                    if (i.value == '') {
+                                    if(res == 'no'){
                                         i.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
-                                        i.previousElementSibling.innerHTML = 'Нельзя ввести пустое имя'
+                                        i.previousElementSibling.innerHTML = 'Такого пользователя нет'
                                         animate(i)
-                                    }if(res == 'yes'){
-                                        i.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
-                                        i.previousElementSibling.innerHTML = 'Такое имя уже занято'
-                                        animate(i)
-                                    }else if(res == 'no') {
+                                    }else {
+                                        let change = new Event('change')
+                                        password.dispatchEvent(change)
                                         animateGood(i)
                                     }
                                 })
@@ -197,26 +163,12 @@
                         }
                     }
                     if (cond) {
-                        let data = {
-                            'userName' : nickname.value,
-                            'email' : mail.value,
-                            'password' : password.value 
-                        }
-                        fetch('/createUser', {
-                                method : 'POST',
-                                headers: {
-                                    'Content-Type' : 'application/json;charset=utf-8',
-                                    "X-CSRFToken" : csrftoken
-                                },
-                                body: JSON.stringify(data)
-                        }).then( (ans) => {ans.text} ).then( (str) => {
                             if (str == 'not ok'){
                                 alert('На нашем сервере возникла ошибка. Повторите попытку позже')
                             }else {
                                 document.cookie = `user=${nickname.value}`
                                 window.location.href = '/'
                             }
-                        } )
                     }
                 }
                 

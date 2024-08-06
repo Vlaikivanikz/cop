@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Portfolio
 from .models import Comment
+from .models import User
 from django.http import HttpResponse
 import json
 from pathlib import Path
@@ -107,6 +108,9 @@ def creation(req):
 def find(req):
     return render(req, 'find.html')
 
+def signUp(req):
+    return render(req, 'authPage.html')
+
 '''-----------------------------------------------------'''
 
 def deleteAll(req):
@@ -159,3 +163,5 @@ def getCommentsByPortId(req):
 def getCss(req):
     name = req.path[6:]
     return HttpResponse(open(Path(STATIC, name)).readlines(), content_type='text/css')
+def login(req):
+    return render(req,'login.html')
