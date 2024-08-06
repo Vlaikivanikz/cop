@@ -167,15 +167,17 @@
                             fetch(`/isThisUserRegistered__${i.value}`)
                                 .then( ans => ans.text() )
                                 .then( res => {
+                                    console.log(i.value == '')
                                     if (i.value == '') {
                                         i.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
                                         i.previousElementSibling.innerHTML = 'Нельзя ввести пустое имя'
                                         animate(i)
-                                    }if(res == 'yes'){
+                                    }else if(res == 'yes'){
                                         i.parentElement.nextElementSibling.lastElementChild.innerHTML = wrong
                                         i.previousElementSibling.innerHTML = 'Такое имя уже занято'
                                         animate(i)
                                     }else if(res == 'no') {
+                                        
                                         animateGood(i)
                                     }
                                 })
