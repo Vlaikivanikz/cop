@@ -15,6 +15,7 @@ from pathlib import Path
 
 
 STATIC = Path(Path(__file__).resolve().parent.parent, 'static', 'cop', 'css')
+HTML = Path(Path(__file__).resolve().parent.parent, 'html_files')
 def getPorts(req):
     ports = Portfolio.objects.all()
     data = []
@@ -97,8 +98,7 @@ def editPort(req):
 '''-----------------------Pages-------------------------'''
 
 def homepage(request):
-    f = open('./html_files/indexx.html').readlines()
-    return HttpResponse(f, content_type='text/html')
+    return HttpResponse(open(Path(HTML, 'indexx.html')).readlines(), content_type='text/html')
 
 def portfolios(req):
     return render(req, 'portfolios.html')
