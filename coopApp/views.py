@@ -97,7 +97,7 @@ def editPort(req):
 '''-----------------------Pages-------------------------'''
 
 def homepage(request):
-    return render(request, 'indexx.html')
+    return render(request, 'html_files/indexx.html')
 
 def portfolios(req):
     return render(req, 'portfolios.html')
