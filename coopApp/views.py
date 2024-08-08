@@ -1,10 +1,10 @@
-from django.shortcuts import render
 from .models import Portfolio
 from .models import Comment
 from .models import User
 from django.http import HttpResponse
 import json
 from pathlib import Path
+import tools
 # port = Portfolio.objects.create(name='HUi', occupation='Killer')
 # async def getPort():
 #     port = await Portfolio.objects.aget(id=1)
@@ -54,7 +54,7 @@ def createPort(req):
         ifOnlineWork=req.POST.get('ifOnlineWork'),
         about=req.POST.get('about'),
     )
-    return render(req, 'portfolios.html')
+    return tools.sendHtml('portfolios.html')
 def getPortById(req):
     ID = req.path.split('/getOnePort__')[1]
     p = Portfolio.objects.get(id=ID)
@@ -93,24 +93,24 @@ def editPort(req):
     p.ifOnlineWork=req.POST.get('ifOnlineWork')
     p.about=req.POST.get('about')
     p.save()
-    return render(req, 'portfolios.html')
+    return tools.sendHtml('portfolios.html')
 
 '''-----------------------Pages-------------------------'''
 
 def homepage(request):
-    return HttpResponse(open(Path(HTML, 'indexx.html')).readlines(), content_type='text/html')
+    return tools.sendHtml('indexx.html')
 
 def portfolios(req):
-    return render(req, 'portfolios.html')
+    return tools.sendHtml('portfolios.html')
 
 def creation(req):
-    return render(req, 'createPort.html')
+    return tools.sendHtml('createPort.html')
 
 def find(req):
-    return render(req, 'find.html')
+    return tools.sendHtml('find.html')
 
 def signUp(req):
-    return render(req, 'authPage.html')
+    return tools.sendHtml('authPage.html')
 
 '''-----------------------------------------------------'''
 
@@ -122,7 +122,7 @@ def deleteOne(req):
     Portfolio.objects.get(id=req.path.split('/deleteOne_')[1]).delete()
     return HttpResponse('ok')
 def search(req):
-    return render(req, 'find.html')
+    return tools.sendHtml('find.html')
 def sendComment(req):
     data =  json.loads(req.body)
     print(type(data))
@@ -165,4 +165,5 @@ def getCss(req):
     name = req.path[6:]
     return HttpResponse(open(Path(STATIC, name)).readlines(), content_type='text/css')
 def login(req):
-    return render(req,'login.html')
+    return tools.sendHtml('login.html')
+
