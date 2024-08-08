@@ -30,7 +30,7 @@ if os.path.isfile(dotenv_file):
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-u819o1+i%)6=&*bdkt83yj(1(nhh!f6(6z95x2av)9nbb)lk#$'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'listiknn.beget.tech']
 
