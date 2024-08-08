@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ccop.wsgi.app'
+WSGI_APPLICATION = 'ccop.wsgi.application'
 
 
 # Database

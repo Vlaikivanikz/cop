@@ -145,12 +145,12 @@ body{
 .port {
     padding: 1%;
     margin-left: 2%;
-    background-color: rgb(235, 235, 235);
+    background-color: #181C20;
     border-radius: 10px;
-    width: 25%;
-    height: 15vh;
+    width: 40%;
+    height: 20vh;
     display: flex;
-    color: black;
+    color: white;
     margin-bottom: 0.5%;
     /* box-shadow: 5px 5px 5px rgb(126, 126, 126); */
 }
@@ -214,7 +214,7 @@ body{
     font-size: xx-large;
     width: 80%;
     height: 100%;
-    color: black;
+    color: white;
     /* background-color: brown; */
 }
 .main-info div div p {
@@ -255,7 +255,7 @@ body{
 .count p{
     font-size: 20pt;
     margin: 0px;
-    color: black;
+    color: white;
 }
 .occupation {
     width: 100%;
@@ -265,7 +265,7 @@ body{
     text-align: left;
 }
 .occupation p {
-    color: black;
+    color: #4298B5;
 }
 .salary {
     width: 100%;
@@ -275,19 +275,20 @@ body{
     text-align: left;
 }
 .salary p {
-    color: black;
+    color: white;
 }
 .act {
     width: 100%;
     height: 33%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     /* display: flex;
     align-items: flex-end;
     text-align: left; */
     /* height: 33.3%; */
 }
 .button {
+    font-size:60%;
     margin-right: 5%;
     display: flex;
     justify-content: center;
@@ -295,15 +296,28 @@ body{
     border-radius: 10px;
     width: 25%;
     height: 100%;
+    padding: 0.3%;
 }
 
-.edit p{
-    color: blue;
+.edit{
+    background-color: rgb(0, 0, 144);
+}
+.edit:hover {
+    background-color: rgb(0, 0, 170);
+}
+.delete{
+    background-color: rgb(144, 0, 0);
+}
+.delete:hover {
+    background-color: rgb(168, 1, 1);
+}
+.active {
+    background-color: rgb(0, 111, 0);
+}
+.active:hover {
+    background-color: rgb(1, 140, 1);
 }
 
-.button:hover {
-    background-color: rgb(190, 190, 190);
-}
 #deleteAll {
     display: flex;
     justify-content: center;
