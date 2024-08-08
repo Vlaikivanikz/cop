@@ -4,7 +4,7 @@ from .models import User
 from django.http import HttpResponse
 import json
 from pathlib import Path
-import tools
+from . import tools
 # port = Portfolio.objects.create(name='HUi', occupation='Killer')
 # async def getPort():
 #     port = await Portfolio.objects.aget(id=1)
