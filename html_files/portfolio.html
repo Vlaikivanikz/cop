@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="/css__portfolio.css">
+    <!-- <link rel="stylesheet" href="/style"> -->
+    <title>Ваше резюме</title>
+</head>
+<body>
+        <div id="sidenav" >
+            <div id="logo" ><p id="co">Ко</p><p id="lab">Лаб</p></div>
+            <div id="buttons" >
+                <div class="b" ><a href="/" >Главная страница</a></div>
+                <div class="b" ><a href="/find" >Поиск работников</a></div>
+                <div class="b" ><a  >Статистика (в разработке)</a></div>
+            </div>
+        </div>
+        <div id="mainbody" class="edible">
+
+            <div id="resumeBody" class="edible">
+                <div id="head" class="edible">
+                    <div id="photo" class="edible">
+                        <img id="person"  src="/img__human.jpg" >
+                    </div>
+                    <div id="description" class="edible">
+                        <input id="text-name" class="i desc name"  placeholder="*Имя Фамилия">
+                        <textarea id="text-description"  rows="6" class="i desc desc" placeholder="*Описание"></textarea>
+                    </div>
+                </div>
+                <div id="info" class="edible">
+                    <div id="addit-info" class="edible">
+                        <p class="text addt" >Возраст:</p>
+                        <input class="i add age"  placeholder="Возраст">
+                        <p class="text addt" >Почта:</p>
+                        <input class="i add mail"  placeholder="Почта">
+                        <p class="text addt" >Номер телефона:</p>
+                        <input class="i add phone" placeholder="Номер телефона">
+                        <p class="text addt" >Хобби:</p>
+                        <input class="i add hobby" placeholder="Хобби">
+                    </div>
+                    <div id="main-info" class="edible">
+                        <div id="occups" class="modules">
+                            <p class="text maint" >Должности:</p>
+                            <textarea class="i main occups"  placeholder="Должность"></textarea>
+                        </div>
+                        <div id="edu" class="modules">
+                            <p class="text maint" >Образование:</p>
+                            <textarea class="i main edu"  placeholder="Образование"></textarea>
+                        </div>
+                        <div id="exp" class="modules">
+                            <p class="text maint" >Опыт работы:</p>
+                            <textarea class="i main exp"  placeholder="Опыт работы"></textarea>
+                        </div>
+                        <div id="skills" class="modules">
+                            <p class="text maint" >Профессиональные навыки:</p>
+                            <textarea class="i main skills"  placeholder="Навыки"></textarea>
+                        </div>
+                        <div id="lang" class="modules">
+                            <p class="text maint" >Иностранные языки:</p>
+                            <textarea class="i main lang"  placeholder="Язык"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg>
+        
+        <div id="tools" >
+            <div id="toolsButtons" >
+                <h2 style="text-align: center;" >Инструменты</h2>
+                <p>Добавить поле:</p>
+                <div id="addField" >
+                    <div class="tool addButton" id="addoccups"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Должность</p></div>
+                    <div class="tool addButton" id="addedu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Образование</p></div>
+                    <div class="tool addButton" id="addexp"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Опыт работы</p></div>
+                    <div class="tool addButton" id="addskills"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Навык</p></div>
+                    <div class="tool addButton" id="addlang"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Иностранный язык</p></div>
+                </div>
+                <p>Выбрать цветовую схему:</p>
+                <div id="colorScheme" >
+                    <div class="tool chooseCol" id="sch0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(57, 155, 42);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Стандартная схема</p></div>
+                    <div class="tool chooseCol" id="sch1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Схема 1</p></div>
+                    <div class="tool chooseCol" id="sch2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Схема 2</p></div>
+                    <div class="tool chooseCol" id="sch3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Схема 3</p></div>
+                    <div class="tool chooseCol" id="sch4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Схема 4</p></div>
+                </div>
+                <p>Выбрать схему компановки элементов:</p>
+                <div id="compose" >
+                    <div class="tool chooseComp" id="comp1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(57, 155, 42);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Схема 1</p></div>
+                    <div class="tool chooseComp" id="comp2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Схема 2</p></div>
+                    <div class="tool chooseComp" id="comp3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Схема 3</p></div>
+                    <div class="tool chooseComp" id="comp4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M7 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm4 10.414-2.707-2.707 1.414-1.414L11 12.586l3.793-3.793 1.414 1.414L11 15.414z"></path></svg><p>Схема 4</p></div>
+                </div>
+                <div id="changeStyles" >
+                    <p>Вставить свои стили для выбранного блока:</p>
+                    <textarea id="stls" oninput="css(this.value)" ></textarea>
+
+                </div>
+            </div>
+            <div  id="save">
+                <p>Сохранить</p>
+            </div>
+        </div>
+        <script>
+            let condition = true
+
+            let limit = 0;
+            function css(styles) {
+                if (document.querySelector('[highlighted]') !== null) {
+                    document.querySelector('[highlighted]').style.cssText = styles
+                }
+            }
+            let click = new Event('click')
+            mainbody.style.width = Math.trunc(window.innerWidth - window.innerHeight * 0.75) + 'px'
+            window.onresize = () => {
+                mainbody.style.width = Math.trunc(window.innerWidth - window.innerHeight * 0.75) + 'px'
+                condition = false
+                resumeBody.dispatchEvent(click)
+                
+            }
+            sidenav.style.width = Math.trunc(window.innerHeight / 4) + 'px'
+            let addFields = document.getElementsByClassName('addButton')
+            for(let el of addFields) {
+                el.onclick = () => {
+                    if (limit != 3) {
+                        let ph = document.getElementById(el.id.split('add')[1]).lastElementChild.placeholder
+                        document.getElementById(el.id.split('add')[1]).insertAdjacentHTML('beforeend', `<textarea class="i main ${el.id.split('add')[1]}"  placeholder="${ph}"></textarea>`)
+                        el.firstElementChild.style.fill = 'rgb(57, 155, 42)'
+                        let turnOff = setTimeout( () => {el.firstElementChild.style.fill = 'rgb(255, 255, 255)'}, 100 )
+                        limit++
+                    }
+                    condition = false
+                    resumeBody.dispatchEvent(click)
+                }
+            }
+            let chooseCol = document.getElementsByClassName('chooseCol')
+            for(let el of chooseCol) {
+                el.onclick = () => {
+                    if (el.firstElementChild.style.fill != 'rgb(57, 155, 42)') {
+                        for(let a of chooseCol) {
+                            a.firstElementChild.style.fill = 'rgb(255, 255, 255)' 
+                        }
+                        let a, b
+                        el.firstElementChild.style.fill = 'rgb(57, 155, 42)'
+                        if (el.id == 'sch0') {
+                            a = 'rgb(15, 142, 142)'
+                            b = 'rgb(48, 48, 190)'
+                        }
+                        if (el.id == 'sch1') {
+                            a = 'rgb(108, 142, 15)'
+                            b = 'rgb(202, 69, 25)'
+
+                        }
+                        if (el.id == 'sch2') {
+                            a = 'rgb(15, 131, 142)'
+                            b = 'rgb(16, 161, 26)'
+                        }
+                        if (el.id == 'sch3') {
+                            a = 'rgb(15, 19, 142)'
+                            b = 'rgb(161, 16, 59)'
+                        }
+                        if (el.id == 'sch4') {
+                            a = 'rgb(84, 146, 148)'
+                            b = 'rgb(73, 77, 78)'
+                        }
+                        head.style.backgroundColor = a
+                        document.getElementById('addit-info').style.backgroundColor = b
+
+                    }
+                    
+
+                }
+            }
+            let chooseComp = document.getElementsByClassName('chooseComp')
+            for(let el of chooseComp) {
+                el.onclick = () => {
+                    condition = false
+                    if (el.firstElementChild.style.fill != 'rgb(57, 155, 42)') {
+                        for(let a of chooseComp) {
+                            a.firstElementChild.style.fill = 'rgb(255, 255, 255)' 
+                        }
+                        el.firstElementChild.style.fill = 'rgb(57, 155, 42)'
+                        let photoBlock = photo
+                        let descriptionBlock = description
+                        let additInfoBlock = document.getElementById('addit-info')
+                        let mainitInfoBlock = document.getElementById('main-info')
+                        head.innerHTML = ''
+                        info.innerHTML = ''
+                        if (el.id == 'comp1') {
+                            head.append(photoBlock)
+                            head.append(descriptionBlock)
+                            info.append(additInfoBlock)
+                            info.append(mainitInfoBlock)
+                        }
+                        if (el.id == 'comp2') {
+                            head.append(descriptionBlock)
+                            head.append(photoBlock)
+                            info.append(additInfoBlock)
+                            info.append(mainitInfoBlock)
+                        }
+                        if (el.id == 'comp3') {
+                            head.append(descriptionBlock)
+                            head.append(photoBlock)
+                            info.append(mainitInfoBlock)
+                            info.append(additInfoBlock)
+                        }
+                        if (el.id == 'comp4') {
+                            head.append(photoBlock)
+                            head.append(descriptionBlock)
+                            info.append(mainitInfoBlock)
+                            info.append(additInfoBlock)
+                            
+                        }
+                    }
+                    condition = false
+                    resumeBody.dispatchEvent(click)
+                }
+            }
+            save.onclick = () => {
+                let i = document.getElementsByClassName('i')
+                let data = {}
+                for(let input of i) {
+                    let cname = input.className.split(' ')[2]
+                    if (data[cname] === undefined) {
+                        data[cname] = [input.value]
+                    }else {
+                        data[cname][data[cname].length] = input.value
+                    }
+                }
+            }
+            // let str =  `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M5 12c0 3.859 3.14 7 7 7 3.859 0 7-3.141 7-7s-3.141-7-7-7c-3.86 0-7 3.141-7 7zm12 0c0 2.757-2.243 5-5 5s-5-2.243-5-5 2.243-5 5-5 5 2.243 5 5z"></path></svg>`
+            // let str = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H5V5h14v14z"></path></svg>'
+            let str = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 30 30" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"></path></svg>'
+            let round1 = document.createElement('div')
+            round1.insertAdjacentHTML('beforeend', str)
+            round1.style.cssText = `position: absolute;`
+            let round2 = document.createElement('div')
+            round2.insertAdjacentHTML('beforeend', str)
+            round2.style.cssText = `position: absolute;`
+            let round3 = document.createElement('div')
+            round3.insertAdjacentHTML('beforeend', str)
+            round3.style.cssText = `position: absolute;`
+            let round4 = document.createElement('div')
+            round4.insertAdjacentHTML('beforeend', str)
+            round4.style.cssText = `position: absolute;`
+            function perform(obj) {
+                round1.style.left = obj.getBoundingClientRect().x -5 +  'px'
+                round1.style.top = obj.getBoundingClientRect().y - 9.5 + 'px'
+                round1.firstElementChild.style.fill = 'red'
+
+                round2.style.left = obj.getBoundingClientRect().x -5 + 'px'
+                round2.style.top = obj.getBoundingClientRect().y -9.5+ obj.getBoundingClientRect().height+ 'px'
+                round2.firstElementChild.style.fill = 'red'
+
+                round3.style.left = obj.getBoundingClientRect().x -5+ obj.getBoundingClientRect().width+ 'px'
+                round3.style.top = obj.getBoundingClientRect().y -9.5+ 'px'
+                round3.firstElementChild.style.fill = 'red'
+
+                round4.style.left = obj.getBoundingClientRect().x -5+ obj.getBoundingClientRect().width+ 'px'
+                round4.style.top = obj.getBoundingClientRect().y -9.5 + obj.getBoundingClientRect().height+ 'px'
+                round4.firstElementChild.style.fill = 'red'
+
+                document.body.append(round1)
+                document.body.append(round2)
+                document.body.append(round3)
+                document.body.append(round4)
+            }
+                resumeBody.onclick = (event) => {
+                    let X = event.pageX
+                    let Y = event.pageY
+                    let obj
+                    if ( (document.querySelector('[highlighted]') !== null) && condition) {
+                        document.querySelector('[highlighted]').removeAttribute('highlighted')
+                        obj = document.elementFromPoint(X, Y)
+                        obj.setAttribute('highlighted', 'yes')
+                        perform(obj)
+                    }else if ( (document.querySelector('[highlighted]') !== null) && !condition ){
+                        perform(document.querySelector('[highlighted]'))
+                    }else if ( (document.querySelector('[highlighted]') == null) && condition) {
+                        obj = document.elementFromPoint(X, Y)
+                        obj.setAttribute('highlighted', 'yes')
+                        perform(obj)
+                    }
+                    condition = true
+                    // obj.style.cssText = 'border-width: 2px; border-color: red; border-style: solid'
+                    
+                    
+                }
+        </script>
+    
+</body>
+</html>

@@ -163,12 +163,8 @@
                         }
                     }
                     if (cond) {
-                            if (str == 'not ok'){
-                                alert('На нашем сервере возникла ошибка. Повторите попытку позже')
-                            }else {
-                                document.cookie = `user=${nickname.value}`
-                                window.location.href = '/'
-                            }
+                            document.cookie = `CoLabUser=${nickname.value}`
+                             window.location.href = '/'
                     }
                 }
                 

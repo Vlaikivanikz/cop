@@ -2,6 +2,7 @@ from .models import Portfolio
 from .models import Comment
 from .models import User
 from django.http import HttpResponse
+from django.shortcuts import render
 import json
 from pathlib import Path
 from . import tools
@@ -11,10 +12,6 @@ from . import tools
 #     print(port.name)
 # asyncio.run(getPort())
 
-
-
-
-STATIC = Path(Path(__file__).resolve().parent.parent, 'static', 'cop', 'css')
 HTML = Path(Path(__file__).resolve().parent.parent, 'html_files')
 def getPorts(req):
     ports = Portfolio.objects.all()
@@ -54,7 +51,7 @@ def createPort(req):
         ifOnlineWork=req.POST.get('ifOnlineWork'),
         about=req.POST.get('about'),
     )
-    return tools.sendHtml('portfolios.html')
+    return render(req,'portfolios.html')
 def getPortById(req):
     ID = req.path.split('/getOnePort__')[1]
     p = Portfolio.objects.get(id=ID)
@@ -93,24 +90,28 @@ def editPort(req):
     p.ifOnlineWork=req.POST.get('ifOnlineWork')
     p.about=req.POST.get('about')
     p.save()
-    return tools.sendHtml('portfolios.html')
+    return render(req,'portfolios.html')
 
 '''-----------------------Pages-------------------------'''
 
 def homepage(request):
-    return tools.sendHtml('indexx.html')
+    # Portfolio.objects.all().delete()
+    # User.objects.all().delete()
+    # Comment.objects.all().delete()
+    return render(request, 'indexx.html')
+    # return render(req,'indexx.html')
 
 def portfolios(req):
-    return tools.sendHtml('portfolios.html')
+    return render(req,'portfolio.html')
 
 def creation(req):
-    return tools.sendHtml('createPort.html')
+    return render(req,'createPort.html')
 
 def find(req):
-    return tools.sendHtml('find.html')
+    return render(req,'find.html')
 
 def signUp(req):
-    return tools.sendHtml('authPage.html')
+    return render(req,'authPage.html')
 
 '''-----------------------------------------------------'''
 
@@ -122,7 +123,7 @@ def deleteOne(req):
     Portfolio.objects.get(id=req.path.split('/deleteOne_')[1]).delete()
     return HttpResponse('ok')
 def search(req):
-    return tools.sendHtml('find.html')
+    return render(req,'find.html')
 def sendComment(req):
     data =  json.loads(req.body)
     print(type(data))
@@ -161,9 +162,7 @@ def getCommentsByPortId(req):
         data.append(obj)
     print(data)
     return HttpResponse(str(json.dumps(data)), content_type='text/plain')
-def getCss(req):
-    name = req.path[6:]
-    return HttpResponse(open(Path(STATIC, name)).readlines(), content_type='text/css')
+
 def login(req):
-    return tools.sendHtml('login.html')
+    return render(req,'login.html')
 

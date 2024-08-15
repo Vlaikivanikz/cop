@@ -17,9 +17,26 @@
     <div class="img1"></div>
     <div class="main_hdr">
 <h2>COOP</h2>
-        <div id="auth-button" >
-            <p><a href="/login" >Login</a>/<a href="/signup" >Sign up</a></p>
+        <div id="authButton" >
+            <!-- <p><a href="/login" >Войти</a>/<a href="/signup" >Создать акккаунт</a></p> -->
         </div>
+        <script>
+            let name = document.cookie.split('; ').find( x => x.split('=')[0] == 'CoLabUser')
+            
+            if ((name == 'undefined') || (name === undefined)) {
+                authButton.innerHTML = '<p><a href="/login" >Вход</a>/<a href="/signup" >Регистрация</a></p>'
+            }else {
+                name = name.split('=')[1]
+                authButton.innerHTML = `<p><a id='nme'  href="/portfolios" >${name}</a>/<a onclick='exit()' >Выйти</a></p>`
+            }
+            if (name == 'Admin') {
+                nme.style.color = 'red'
+            }
+            function exit() {
+                document.cookie = 'CoLabUser=undefined'
+                window.location.href = '/'
+            }
+        </script>
     </div>
     
     <div class="bio">
