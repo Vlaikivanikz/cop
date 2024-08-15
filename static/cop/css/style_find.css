@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Nanum+Gothic&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Exo 2';
 }
 
 body{
     display: flex;
-    height: 100vh;
 }
 
 .side-nav{
@@ -22,12 +21,16 @@ body{
 }
 
 .side-nav .upper-icons{
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-evenly;
     padding: 20px 0px 10px 0px; 
 }
 
 .side-nav .filters{
+    position: sticky;
+    top: 0;
     background-color: #181C20;
     height: 100vh;
     border-radius: 10px / 0px 10px 0px 0px;
@@ -37,7 +40,6 @@ body{
     color: #adadad;
     padding: 10px 10px;
     gap: 20px;
-    font-family:'Montserrat Alternates';
 }
 
 .side-nav .upper-icons p i{
@@ -49,6 +51,8 @@ body{
 }
 
 .container .upper-nav{
+    position: sticky;
+    top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,6 +63,7 @@ body{
     background-color: #181C20;
     align-items: center;
     padding: 15px;
+    border: none;
     border-radius: 10px;
     width: 100%;
     display: flex;
@@ -66,27 +71,40 @@ body{
 .container .upper-nav .search input{
     width: 100%;
     border: none;
-    background: transparent;
+    outline: none;
+    color: #f2f2f2;
+    background: none;
 }
 
 .container .upper-nav .search i{
     color: #adadad;
+    cursor: pointer;
 }
 
 .container .upper-nav .bio{
     display: flex;
     gap: 10px;
+    background-color: #181C20;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .container .upper-nav .bio .pers-info{
     text-align: left;
+    color: #f2f2f2;
     padding: 5px 0px 0px 0px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container .upper-nav .bio .pers-info a{
+    color: #f2f2f2;
+    text-decoration: none;
 }
 
 .container .upper-nav .bio .portrait-img img{
     border-radius: 50%;
     width: 48px;
+    cursor: pointer;
     height: 48px;
 }
 
@@ -99,105 +117,175 @@ body{
     display: inline-flex;
 }
 
-.portfolios{
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: 1fr 1fr;
-}
-
-.portfolios .port-form{
-    background-color: #181C20;
-    width: 95%;
-    aspect-ratio: 15/7;
-    margin: 20px 0px;
-    border-radius: 15px;
+.container .job-cards{
+    margin-top: 10px;
     display: flex;
-    align-items: center;
-    color: white;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.portfolios .port-form .photos-block{
-    flex: 7;
-    padding: 0px 10px;
-}
-
-.portfolios .port-form .photos-block img{
-    width: 100%;
-    aspect-ratio: 12/6;
-    border-radius: 15px;
-    border: solid #6c6a71;
-}
-
-.portfolios .port-form .photos-block .block{
-    background: #65797b;
-    width: 30%;
-    aspect-ratio: 6/1;
-    margin: 5% auto;
-    border-radius: 15px;
-    text-align: center;
-}
-
-
-
-.portfolios .port-form .info-block{
-    flex: 6;
-}
-
-.portfolios .port-form .info-block .avatar{
+.container .job-cards .card {
+    cursor: pointer;
     display: flex;
-}
-
-.portfolios .port-form .info-block .avatar .image{
-    width: 20%;
-}
-
-.portfolios .port-form .info-block .avatar img{
-    border-radius: 50%;
-    width: 100%;
-    aspect-ratio: 1;
-}
-
-.portfolios .port-form .info-block .avatar .name{
-    margin-left: 5%;
-    padding-top: 1%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.portfolios .port-form .info-block .avatar .name h3{
-    color: #4298B5;
-}
-
-.portfolios .port-form .info-block .about{
-    padding: 5%;
-    height: 10vh;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.portfolios .port-form .info-block .tags{
-    display: flex;
-    gap: 2%;
-    padding: 1% 5%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-
-.portfolios .port-form .info-block .tags .tag{
-    background: linear-gradient(to right, #032820, #08652C, #80A416);
-    border-radius: 15px;
-    color: #FFFFFF;
-    padding: 2px 10px;
-}
-
-
-.portfolios .port-form .info-block .actions{
-    padding: 5% 5%;
-}
-
-.portfolios .port-form .info-block .actions button{
+    height: 300px;
+    width: 49%;
+    border-radius: 10px;
     border: none;
-    color: #FFFFFF;
-    background-color: #497C57;
-    width: 40%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.container .job-cards .card:hover{
+    box-shadow: 0 10px 30px #1C621B;
+}
+
+.container .job-cards .card .avatar{
+    height: 100%;
+}
+
+.container .job-cards .card .avatar img{
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.container .job-cards .card .info{
+    padding-left: 10px;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .job-cards .card .info div h5{
+    font-size: 36px;
+}
+
+.container .job-cards .card .info div i{
+    color: #85AF24;
+    font-size: 30px;
+}
+
+.container .job-cards .card .info .titles a{
+    color: #08652C;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.container .job-cards .card .info .titles span{
+    color: #80A416;
+}
+
+.container .job-cards .card .info .card-tags {
+    margin: 17px 0px;
+}
+
+.container .job-cards .card .info .card-tags a{
+    text-decoration: none;
+    color: #f2f2f2;
     border-radius: 15px;
-    aspect-ratio: 7/2;
+    transition: all 0.3s ease;
+    padding: 5px;
+    background: linear-gradient(to right, #032820, #08652C, #80A416);
+}
+
+.container .job-cards .card .info .card-tags a:hover{
+    box-shadow: 0 0px 20px #1D719D;
+}
+
+.container .job-cards .card .info .card-desc{
+    font-size: 16px;
+    line-height: 24px;
+    padding-right: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    height: calc(24px*3);
+}
+
+.container .job-cards .card .info .btns{
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    margin-left: 35%;
+}
+
+.container .job-cards .card .info .btns button{
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    color: #4F772D;
+    border: solid #4F772D;
+}
+
+.container .job-cards .card .info .btns button:hover{
+    cursor: pointer;
+}
+
+.container .job-cards .card .info .portrait img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.container .job-cards .card .projects-pics{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 15px;
+    font-size: 32px;
+}
+
+.container .job-cards .card .projects-pics i{
+    padding: 0px 20px;
+    border: solid #181C20;
+    border-radius: 10px;
+}
+
+.container .job-cards .card .projects-pics img{
+    height: 50%;
+    aspect-ratio: 2/1;
+    border-radius: 15px;
+}
+
+.container .job-cards .card .info .send-req{
+    display: flex;
+    transition: all 0.3s ease;
+    margin-left: 35%;
+    margin-bottom: 10px;
+}
+
+.container .job-cards .card .info .send-req button{
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    color: #4F772D;
+    border: solid #4F772D;
+}
+
+.container .job-cards .card .info .titles-sec a{
+    color: #08652C;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.container .job-cards .card .info .titles-sec span{
+    color: #80A416;
+}
+
+@media screen and (max-width: 1700px) {
+    .container .job-cards .card{
+        width: 100%;
+    }
+    .container .job-cards .card .info .titles{
+        width: 100%;
+    }
+    .container .job-cards .card .info .card-tags{
+        width: 100%;
+    }
+    .container .job-cards .card .info .send-req{
+        margin-left: 30%;
+    }
 }
