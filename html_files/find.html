@@ -91,7 +91,7 @@
             </div>
             <div class="bio">
                 <div class="portrait-img">
-                    <img src="portrait.png" alt="">
+                    <img src="/img__portrait.png" alt="">
                 </div>
                 <div class="pers-info">
                     <a href="#">Иван Иванов</a>
@@ -103,7 +103,7 @@
             <div class="content">
                 <div class="job-cards" id="job-cards">
                     <div class="card">
-                        <div class="avatar"><img src="portrait.png" alt=""></div>
+                        <div class="avatar"><img src="/img__portrait.png" alt=""></div>
                         <div class="info">
                             <div class="titles">
                                 <h5>Иванов Иван<i class='bx bx-check'></i></h5>
@@ -127,11 +127,11 @@
                     <div class="card">
                         <div class="projects-pics">
                             <i class='bx bx-chevron-up'></i>
-                            <img src="background.png" alt="">
+                            <img src="/img__background.png" alt="">
                             <i class='bx bx-chevron-down' ></i>
                         </div>
                         <div class="info">
-                            <div class="portrait"><img src="portrait.png" alt=""></div>
+                            <div class="portrait"><img src="/img__portrait.png" alt=""></div>
                             <div class="titles-sec">
                                 <h5>Иванов Иван<i class='bx bx-check'></i></h5>
                                 <p><a href="#">Дизайнер</a> <span>| Москва, Россия</span></p>
@@ -167,14 +167,15 @@
                 },
                 body: JSON.stringify({ query: userInput })
             })
-            .then(response => response.json())
+            .then(response => response.text())
             .then(data =>{
-                var resultsElement = document.getElementById('job-cards');
-
-                for(let element of data.results) {
+                
+                let resultsElement = document.getElementById('job-cards');
+                resultsElement.innerHTML = ''
+                for(let element of JSON.parse(data)) {
                     var resultHTML = `
                         <div class="card">
-                            <div class="avatar"><img src="portrait.png" alt=""></div>
+                            <div class="avatar"><img src="/img__portrait.png" alt=""></div>
                             <div class="info">
                                 <div class="titles">
                                     <h5>${element.name}</h5>
@@ -194,10 +195,41 @@
                             </div>
                         </div>
                     `;
+                    resultsElement.insertAdjacentHTML('beforeend',resultHTML);
                 };
-                resultsElement.insertAdjacentHTML('beforeend',resultHTML);
             });
         });
+
+        fetch('/search_display/')
+        .then(response => response.text())
+        .then(blyadata =>{
+            let resultsElement = document.getElementById('job-cards');
+            for(let element of JSON.parse(blyadata)) {
+                let resHTML = `
+                        <div class="card">
+                            <div class="avatar"><img src="/img__portrait.png" alt=""></div>
+                            <div class="info">
+                                <div class="titles">
+                                    <h5>${element.name}</h5>
+                                    <p><a href="#">${element.occupation}</a> <span>| ${element.citizenship}</span></p>
+                                </div>
+                                <div class="card-tags">
+                                    <a href="#">Дизайн</a>
+                                    <a href="#">Веб разработка</a>
+                                    <a href="#">Онлайн работа</a>
+                                </div>
+                                <div class="card-desc">
+                                    ${element.about}
+                                </div>
+                                <div class="btns">
+                                    <button>Пожать руку</button>
+                                </div>
+                            </div>
+                        </div>
+                `;
+                resultsElement.insertAdjacentHTML('beforeend', resHTML)
+            }
+        })
     </script>
 </body>
 </html>

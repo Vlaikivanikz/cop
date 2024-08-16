@@ -51,7 +51,7 @@ def createPort(req):
         ifOnlineWork=req.POST.get('ifOnlineWork'),
         about=req.POST.get('about'),
     )
-    return render(req,'portfolios.html')
+    return render(req,'portfolio.html')
 def getPortById(req):
     ID = req.path.split('/getOnePort__')[1]
     p = Portfolio.objects.get(id=ID)
@@ -90,7 +90,7 @@ def editPort(req):
     p.ifOnlineWork=req.POST.get('ifOnlineWork')
     p.about=req.POST.get('about')
     p.save()
-    return render(req,'portfolios.html')
+    return render(req,'portfolio.html')
 
 '''-----------------------Pages-------------------------'''
 
@@ -168,7 +168,13 @@ def login(req):
 
 def search_view(request):
     if request.method == 'POST':
-        query = request.POST.get('query')
-        results = Portfolio.objects.filter(name__incontains=query)
+        query_list = json.loads(request.body)
+        results = Portfolio.objects.filter(name__icontains=query_list['query'])
         search_results = [{'name': item.name, 'occupation': item.occupation, 'citizenship': item.citizenship, 'location': item.location, 'about':item.about} for item in results]
-        return JsonResponse({'results': search_results})
+        return HttpResponse(str(json.dumps(search_results)), content_type='text/plain')
+    
+def search_display(request):
+    if request.method == 'GET':
+        results = Portfolio.objects.all()
+        search_results = [{'name': item.name, 'occupation': item.occupation, 'citizenship': item.citizenship, 'location': item.location, 'about':item.about} for item in results]
+        return HttpResponse(str(json.dumps(search_results)), content_type='text/plain')

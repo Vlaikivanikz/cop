@@ -26,5 +26,6 @@ urlpatterns = [
     path('createUser', dbreqs.createUser),
     path('login', views.login),
     path('check', dbreqs.check),
-    path('search/', views.search_view)
+    path('search/', views.search_view),
+    path('search_display/', views.search_display)
 ]
