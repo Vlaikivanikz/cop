@@ -86,8 +86,8 @@
     <div class="container">
         <div class="upper-nav">
             <div class="search">
-                <input type="text" placeholder="Введите имя человека или должность">
-                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Введите имя человека или должность" id="searchInput">
+                <i class='bx bx-search' id="searching"></i>
             </div>
             <div class="bio">
                 <div class="portrait-img">
@@ -101,7 +101,7 @@
         </div>
         <div class="main">
             <div class="content">
-                <div class="job-cards">
+                <div class="job-cards" id="job-cards">
                     <div class="card">
                         <div class="avatar"><img src="portrait.png" alt=""></div>
                         <div class="info">
@@ -153,5 +153,51 @@
             </div>
         </div>
     </div>
+    {% csrf_token %}
+    <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        document.getElementById("searching").addEventListener("click", function(){
+            var userInput = document.getElementById("searchInput").value;
+
+            fetch('/search/',{
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json;charset=utf-8',
+                    'X-CSRFToken' : csrftoken
+                },
+                body: JSON.stringify({ query: userInput })
+            })
+            .then(response => response.json())
+            .then(data =>{
+                var resultsElement = document.getElementById('job-cards');
+
+                for(let element of data.results) {
+                    var resultHTML = `
+                        <div class="card">
+                            <div class="avatar"><img src="portrait.png" alt=""></div>
+                            <div class="info">
+                                <div class="titles">
+                                    <h5>${element.name}</h5>
+                                    <p><a href="#">${element.occupation}</a> <span>| ${element.citizenship}</span></p>
+                                </div>
+                                <div class="card-tags">
+                                    <a href="#">Дизайн</a>
+                                    <a href="#">Веб разработка</a>
+                                    <a href="#">Онлайн работа</a>
+                                </div>
+                                <div class="card-desc">
+                                    ${element.about}
+                                </div>
+                                <div class="btns">
+                                    <button>Пожать руку</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                };
+                resultsElement.insertAdjacentHTML('beforeend',resultHTML);
+            });
+        });
+    </script>
 </body>
 </html>

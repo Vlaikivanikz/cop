@@ -25,5 +25,6 @@ urlpatterns = [
     re_path(r'^isThisUserRegistered__', dbreqs.ifUser),
     path('createUser', dbreqs.createUser),
     path('login', views.login),
-    path('check', dbreqs.check)
+    path('check', dbreqs.check),
+    path('search/', views.search_view)
 ]

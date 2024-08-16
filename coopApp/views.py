@@ -1,7 +1,7 @@
 from .models import Portfolio
 from .models import Comment
 from .models import User
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 import json
 from pathlib import Path
@@ -166,3 +166,9 @@ def getCommentsByPortId(req):
 def login(req):
     return render(req,'login.html')
 
+def search_view(request):
+    if request.method == 'POST':
+        query = request.POST.get('query')
+        results = Portfolio.objects.filter(name__incontains=query)
+        search_results = [{'name': item.name, 'occupation': item.occupation, 'citizenship': item.citizenship, 'location': item.location, 'about':item.about} for item in results]
+        return JsonResponse({'results': search_results})
