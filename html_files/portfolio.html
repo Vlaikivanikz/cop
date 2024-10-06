@@ -97,7 +97,7 @@
                 </div>
                 <div id="changeStyles" >
                     <p>Вставить свои стили для выбранного блока:</p>
-                    <textarea id="stls" oninput="css(this.value)" ></textarea>
+                    <textarea id="stls" oninput="css(this.value)" style="background-color: white;"></textarea>
 
                 </div>
             </div>
@@ -122,17 +122,13 @@
                 resumeBody.dispatchEvent(click)
                 
             }
-            sidenav.style.width = Math.trunc(window.innerHeight / 4) + 'px'
             let addFields = document.getElementsByClassName('addButton')
             for(let el of addFields) {
                 el.onclick = () => {
-                    if (limit != 3) {
                         let ph = document.getElementById(el.id.split('add')[1]).lastElementChild.placeholder
                         document.getElementById(el.id.split('add')[1]).insertAdjacentHTML('beforeend', `<textarea class="i main ${el.id.split('add')[1]}"  placeholder="${ph}"></textarea>`)
                         el.firstElementChild.style.fill = 'rgb(57, 155, 42)'
                         let turnOff = setTimeout( () => {el.firstElementChild.style.fill = 'rgb(255, 255, 255)'}, 100 )
-                        limit++
-                    }
                     condition = false
                     resumeBody.dispatchEvent(click)
                 }
