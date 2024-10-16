@@ -12,6 +12,7 @@ urlpatterns = [
     path('creation', views.creation),
     re_path(r'_&&port\Z', views.creation),
     re_path(r'^getOnePort__', views.getPortById),
+    re_path(r'^getPortByName___', dbreqs.getPortByName),
     re_path(r'^editPort__', views.editPort),
     path('delete', views.deleteAll),
     path('find', views.search),
@@ -27,5 +28,6 @@ urlpatterns = [
     path('login', views.login),
     path('check', dbreqs.check),
     path('search/', views.search_view),
-    path('search_display/', views.search_display)
+    path('search_display/', views.search_display),
+    path('savePort', dbreqs.save)
 ]

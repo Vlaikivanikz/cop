@@ -47,7 +47,8 @@ body {
     width: 75vh;
     border-width: 0px 1px 0px 1px;
     border-style: solid;
-    border-color: black
+    border-color: black;
+    display: none;
     /* background-color: antiquewhite; */
 }
 #head {

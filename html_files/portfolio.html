@@ -15,9 +15,11 @@
                 <div class="b" ><a href="/" >Главная страница</a></div>
                 <div class="b" ><a href="/find" >Поиск работников</a></div>
                 <div class="b" ><a  >Статистика (в разработке)</a></div>
+                <!-- <div class="b" ><a  href="/delete">Удалить</a></div> -->
             </div>
         </div>
         <div id="mainbody" class="edible">
+
 
             <div id="resumeBody" class="edible">
                 <div id="head" class="edible">
@@ -25,8 +27,8 @@
                         <img id="person"  src="/img__human.jpg" >
                     </div>
                     <div id="description" class="edible">
-                        <input id="text-name" class="i desc name"  placeholder="*Имя Фамилия">
-                        <textarea id="text-description"  rows="6" class="i desc desc" placeholder="*Описание"></textarea>
+                        <input id="text-name" class="i desc name add"  placeholder="*Имя Фамилия">
+                        <textarea id="text-description"  rows="6" class="i desc desc add" placeholder="*Описание"></textarea>
                     </div>
                 </div>
                 <div id="info" class="edible">
@@ -39,8 +41,14 @@
                         <input class="i add phone" placeholder="Номер телефона">
                         <p class="text addt" >Хобби:</p>
                         <input class="i add hobby" placeholder="Хобби">
+                        <p class="text addt" >Местоположение:</p>
+                        <input class="i add location" placeholder="Местоположение">
                     </div>
                     <div id="main-info" class="edible">
+                        <div id="salary" class="modules">
+                            <p class="text maint" >Желаемая зарплата:</p>
+                            <textarea class="i main salary"  placeholder="Зарплата"></textarea>
+                        </div>
                         <div id="occups" class="modules">
                             <p class="text maint" >Должности:</p>
                             <textarea class="i main occups"  placeholder="Должность"></textarea>
@@ -65,15 +73,16 @@
                 </div>
             </div>
 
+
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg>
         
         <div id="tools" >
             <div id="toolsButtons" >
                 <h2 style="text-align: center;" >Инструменты</h2>
                 <p>Добавить поле:</p>
                 <div id="addField" >
+                    <div class="tool addButton" id="addsalary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Зарплата</p></div>
                     <div class="tool addButton" id="addoccups"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Должность</p></div>
                     <div class="tool addButton" id="addedu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Образование</p></div>
                     <div class="tool addButton" id="addexp"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z"></path></svg><p>Опыт работы</p></div>
@@ -105,16 +114,24 @@
                 <p>Сохранить</p>
             </div>
         </div>
+        {% csrf_token %}
         <script>
+            const User = document.cookie.split('; ').find(el => el.split("=")[0] == 'CoLabUser').split('=')[1]
+            load()
+            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
             let condition = true
 
-            let limit = 0;
             function css(styles) {
                 if (document.querySelector('[highlighted]') !== null) {
                     document.querySelector('[highlighted]').style.cssText = styles
                 }
             }
-            let click = new Event('click')
+            
+            let click = new Event('click');
+            function clickClone() {
+                return new Event('click')
+            }
+            console.log(click.constructor)
             mainbody.style.width = Math.trunc(window.innerWidth - window.innerHeight * 0.75) + 'px'
             window.onresize = () => {
                 mainbody.style.width = Math.trunc(window.innerWidth - window.innerHeight * 0.75) + 'px'
@@ -133,9 +150,11 @@
                     resumeBody.dispatchEvent(click)
                 }
             }
+            var Scheme = 'sch0'
             let chooseCol = document.getElementsByClassName('chooseCol')
             for(let el of chooseCol) {
                 el.onclick = () => {
+                    Scheme = el.id;
                     if (el.firstElementChild.style.fill != 'rgb(57, 155, 42)') {
                         for(let a of chooseCol) {
                             a.firstElementChild.style.fill = 'rgb(255, 255, 255)' 
@@ -171,9 +190,12 @@
 
                 }
             }
+            var Composition = 'comp1';
             let chooseComp = document.getElementsByClassName('chooseComp')
             for(let el of chooseComp) {
                 el.onclick = () => {
+                    Composition = el.id
+                    console.log(Composition)
                     condition = false
                     if (el.firstElementChild.style.fill != 'rgb(57, 155, 42)') {
                         for(let a of chooseComp) {
@@ -216,17 +238,27 @@
                     resumeBody.dispatchEvent(click)
                 }
             }
+
             save.onclick = () => {
-                let i = document.getElementsByClassName('i')
-                let data = {}
-                for(let input of i) {
-                    let cname = input.className.split(' ')[2]
-                    if (data[cname] === undefined) {
-                        data[cname] = [input.value]
-                    }else {
-                        data[cname][data[cname].length] = input.value
-                    }
+                let data = {};
+                data = {}
+                for( let e of document.getElementsByClassName("i") ) {
+                    let m = e.className.split(' ')[2]
+                    data[m] == undefined ? data[m] = e.value : data[m] = data[m] + '#}q{#' + e.value;
                 }
+                data.sch = Scheme;
+                console.log(Composition)
+                data.com = Composition;
+                data.usr = User
+                console.log(data)
+                fetch('/savePort', {
+                    method : 'POST',
+                    headers: {
+                        'Content-Type' : 'application/json;charset=utf-8',
+                        "X-CSRFToken" : csrftoken
+                    },
+                    body : JSON.stringify(data)
+                })
             }
             // let str =  `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M5 12c0 3.859 3.14 7 7 7 3.859 0 7-3.141 7-7s-3.141-7-7-7c-3.86 0-7 3.141-7 7zm12 0c0 2.757-2.243 5-5 5s-5-2.243-5-5 2.243-5 5-5 5 2.243 5 5z"></path></svg>`
             // let str = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H5V5h14v14z"></path></svg>'
@@ -286,6 +318,45 @@
                     
                     
                 }
+            function load() {
+                console.log(User)
+                fetch(`/getPortByName___${User}`)
+                    .then(res => res.text())
+                    .then(obj => {
+                        console.log(obj)
+                        if (obj != 'not ok') {
+                            let data = JSON.parse(obj)
+                            let arr = []
+                            for(let el1 of document.getElementsByClassName('main')) {
+                                arr.push(el1.className.split(' ')[2])
+                            }
+                            for(let e of arr) {
+                                let strings = data[e].split('#}q{#')
+                                console.log(strings)
+                                for(let n = 1; n < strings.length; n++) {
+                                    document.getElementById('add' + e).dispatchEvent(clickClone())
+                                }
+                                let ins = document.getElementsByClassName(e)
+                                strings.forEach( (el,index) => {
+                                    ins[index].value = el
+                                } ) 
+                            }
+                            let arr2 = []
+                            for(let el1 of document.getElementsByClassName('add')) {
+                                arr2.push(el1.className.split(' ')[2])
+                            }
+                            for(let el2 of arr2) {
+                                document.getElementsByClassName(el2)[0].value = data[el2]
+                            }
+                            console.log(data.com)
+                            console.log(data.sch)
+                            document.getElementById(data.sch).dispatchEvent(clickClone())
+                            document.getElementById(data.com).dispatchEvent(clickClone()) 
+                        }
+                        resumeBody.style.display = 'block'
+                    })
+            }
+        
         </script>
     
 </body>

@@ -118,7 +118,7 @@ def signUp(req):
 def deleteAll(req):
     print('here')
     Portfolio.objects.all().delete()
-    return HttpResponse('ok')
+    return render(req,'portfolio.html')
 def deleteOne(req):
     Portfolio.objects.get(id=req.path.split('/deleteOne_')[1]).delete()
     return HttpResponse('ok')
