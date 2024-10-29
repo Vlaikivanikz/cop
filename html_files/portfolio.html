@@ -27,8 +27,8 @@
                         <img id="person"  src="/img__human.jpg" >
                     </div>
                     <div id="description" class="edible">
-                        <input id="text-name" class="i desc name add"  placeholder="*Имя Фамилия">
-                        <textarea id="text-description"  rows="6" class="i desc desc add" placeholder="*Описание"></textarea>
+                        <input id="text-name" class="i descr name add"  placeholder="*Имя Фамилия">
+                        <textarea id="text-description"  rows="6" class="i descr desc add" placeholder="*Описание"></textarea>
                     </div>
                 </div>
                 <div id="info" class="edible">
@@ -323,7 +323,6 @@
                 fetch(`/getPortByName___${User}`)
                     .then(res => res.text())
                     .then(obj => {
-                        console.log(obj)
                         if (obj != 'not ok') {
                             let data = JSON.parse(obj)
                             let arr = []
@@ -346,6 +345,7 @@
                                 arr2.push(el1.className.split(' ')[2])
                             }
                             for(let el2 of arr2) {
+                                console.log(document.getElementsByClassName(el2)[0])
                                 document.getElementsByClassName(el2)[0].value = data[el2]
                             }
                             console.log(data.com)

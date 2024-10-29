@@ -21,16 +21,18 @@
             <!-- <p><a href="/login" >Войти</a>/<a href="/signup" >Создать акккаунт</a></p> -->
         </div>
         <script>
-            let name = document.cookie.split('; ').find( x => x.split('=')[0] == 'CoLabUser').split('=')[1]
-            console.log(name)
-            if ((name == 'undefined') || (name === undefined)) {
+            console.log(document.cookie)
+            let name = document.cookie.split('; ').find( x => x.split('=')[0] == 'CoLabUser')
+            if ((name == undefined)) {
+                authButton.innerHTML = '<p><a href="/login" >Вход</a>/<a href="/signup" >Регистрация</a></p>'
+            }else if(name.split('=')[1] == 'undefined') {
                 authButton.innerHTML = '<p><a href="/login" >Вход</a>/<a href="/signup" >Регистрация</a></p>'
             }else {
-                authButton.innerHTML = `<p><a id='nme'  href="/portfolios" >${name}</a>/<a onclick='exit()' >Выйти</a></p>`
+                authButton.innerHTML = `<p><a id='nme'  href="/portfolios" >${name.split("=")[1]}</a>/<a onclick='exit()' >Выйти</a></p>`
             }
-            if (name == 'Admin') {
-                nme.style.color = 'red'
-            }
+            // if (name == 'Admin') {
+            //     nme.style.color = 'red'
+            // }
             function exit() {
                 document.cookie = 'CoLabUser=undefined'
                 window.location.href = '/'
